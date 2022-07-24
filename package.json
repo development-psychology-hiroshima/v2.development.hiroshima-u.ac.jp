@@ -1,0 +1,34 @@
+{
+  "name": "v2.development.hiroshima-u.ac.jp",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite build; vite preview --host"
+  },
+  "dependencies": {
+    "@vitejs/plugin-legacy": "^2.0.0",
+    "js-yaml": "^4.1.0",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.18.9",
+    "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
+    "@trivago/prettier-plugin-sort-imports": "^3.3.0",
+    "@vitejs/plugin-vue": "^3.0.1",
+    "eslint": "^8.20.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-sort-exports": "^0.7.0",
+    "eslint-plugin-vue": "^9.2.0",
+    "prettier": "^2.7.1",
+    "rollup-plugin-visualizer": "^5.7.1",
+    "terser": "^5.14.2",
+    "vite": "^3.0.2",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-imp": "^2.2.0",
+    "vite-plugin-pwa": "^0.12.3",
+    "vite-plugin-top-level-await": "^1.1.1"
+  }
+}
