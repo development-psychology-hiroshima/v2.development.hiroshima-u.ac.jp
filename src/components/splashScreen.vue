@@ -199,7 +199,7 @@ function resolveUrl(url) {
 }
 
 #title-first-line {
-  letter-spacing: -0.02em;
+  letter-spacing: -0.05em;
 }
 
 #splash-menu-button {
