@@ -53,6 +53,7 @@ function resolveUrl(url) {
 </script>
 
 <template>
+<!--  Photo by Alfons Morales on Unsplash-->
   <div
     id="splash-lazyload-image-container"
     :style="{

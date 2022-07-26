@@ -110,6 +110,10 @@ const awards = inject("awards").reduce(timelineComposer);
   margin-left: 0;
 }
 
+#timeline > div:last-child > div:last-child {
+  margin-right: 5vw;
+}
+
 #timeline::before {
   content: "";
   width: 1rem;
@@ -125,7 +129,6 @@ const awards = inject("awards").reduce(timelineComposer);
   );
   border-radius: 50%;
   transform: translateX(-0.8rem);
-  filter: blur(0.1px);
 }
 
 .container-year,
@@ -134,6 +137,10 @@ const awards = inject("awards").reduce(timelineComposer);
   flex-direction: column;
   align-items: center;
   margin-left: 1rem;
+}
+
+.container-year {
+  margin-right: 0.5rem;
 }
 
 .timeline-year {
@@ -151,15 +158,21 @@ const awards = inject("awards").reduce(timelineComposer);
 
 .container-card {
   margin: 0 0.5rem;
+  width: 13rem;
   filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.1));
+}
+
+.container-card:not(:nth-child(2)) {
+  margin-left: -2rem;
 }
 
 .content-card {
   display: grid;
+  grid-template-areas:
+    "content"
+    "menu";
   place-items: center;
-  grid-template-rows: 1fr;
   grid-gap: 0.5rem;
-  width: 12rem;
   overflow-wrap: anywhere;
   height: fit-content;
   transition: all 0.125s ease-in-out;
@@ -168,6 +181,7 @@ const awards = inject("awards").reduce(timelineComposer);
 }
 
 .content-text {
+  grid-area: content;
   height: fit-content;
   display: -webkit-box;
   overflow: hidden;
@@ -177,10 +191,11 @@ const awards = inject("awards").reduce(timelineComposer);
   -webkit-box-orient: vertical;
   transition: all 0.125s ease-in-out;
   text-align: justify;
-  text-justify: inter-word !important; /* comes into effect in chrome >= 105? time will tell */
+  text-justify: inter-character !important; /* comes into effect in chrome >= 105? time will tell */
 }
 
 a {
+  grid-area: menu;
   display: inline-block;
   width: fit-content;
   text-decoration: none;

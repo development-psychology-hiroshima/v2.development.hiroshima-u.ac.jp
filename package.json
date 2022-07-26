@@ -11,7 +11,8 @@
   "dependencies": {
     "@vitejs/plugin-legacy": "^2.0.0",
     "js-yaml": "^4.1.0",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.9",
@@ -21,11 +22,11 @@
     "eslint": "^8.20.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-sort-exports": "^0.7.0",
-    "eslint-plugin-vue": "^9.2.0",
+    "eslint-plugin-vue": "^9.3.0",
     "prettier": "^2.7.1",
     "rollup-plugin-visualizer": "^5.7.1",
     "terser": "^5.14.2",
-    "vite": "^3.0.2",
+    "vite": "^3.0.3",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-imp": "^2.2.0",
     "vite-plugin-pwa": "^0.12.3",
