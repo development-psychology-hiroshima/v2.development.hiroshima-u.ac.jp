@@ -53,7 +53,6 @@ function resolveUrl(url) {
 </script>
 
 <template>
-<!--  Photo by Alfons Morales on Unsplash-->
   <div
     id="splash-lazyload-image-container"
     :style="{
@@ -136,6 +135,7 @@ function resolveUrl(url) {
 
 #mask-underlay {
   user-select: none;
+  -webkit-user-select: none;
   position: absolute;
   top: 0;
   right: 0;
@@ -193,6 +193,7 @@ function resolveUrl(url) {
   font-size: 3rem;
   margin-bottom: 1em;
   user-select: none;
+  -webkit-user-select: none;
 }
 
 .title-container.ja {
@@ -236,31 +237,32 @@ function resolveUrl(url) {
   font-size: 1.25rem;
 }
 
-#splash-toc > a:nth-child(1) {
+#splash-toc > a:first-child {
   font-weight: 700;
   color: #000000;
 }
 
-#splash-toc > a:nth-child(1)::before {
+#splash-toc > a:first-child::before {
   content: "";
   position: absolute;
   display: block;
   width: 0.5rem;
   height: 1.25rem;
-  transform: translate(-1em, 0.3em);
+  transform: translateX(-1em);
   background-color: #000000;
 }
 
 a {
   color: #707070;
-  display: inline-block;
+  display: flex;
   text-decoration: none;
-  padding: 0.5rem 0.5rem;
+  padding: 0 0.5rem;
+  height: 2.5rem;
+  align-items: center;
   transition: all 0.175s ease-in-out;
 }
 
-#splash-toc > a:nth-child(1):hover,
-a:hover {
+#splash-toc > a:hover {
   font-weight: 700;
   color: #fff;
   background-color: #000;
@@ -297,7 +299,7 @@ a:hover {
   #splash-toc {
     grid-gap: unset;
     height: calc(100vh - 12rem);
-    overflow: scroll;
+    overflow-y: scroll;
   }
 
   #splash-menu.show-menu {
@@ -323,31 +325,22 @@ a:hover {
     fill: #ffffff;
   }
 
-  #splash-toc > a:nth-child(1) {
+  #splash-toc > a:first-child {
     font-weight: 700;
     color: #ffffff;
   }
 
-  #splash-toc > a:nth-child(1)::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 0.5rem;
-    height: 1.25rem;
-    transform: translate(-1em, 0.3em);
+  #splash-toc > a:first-child::before {
     background-color: #ffffff;
   }
 
   a {
     color: #e8eded;
-    padding: 0.5rem 0.5rem;
-    height: fit-content;
+    height: 2rem;
   }
 
-  #splash-toc > a:nth-child(1):hover,
-  a:hover,
-  #splash-toc > a:nth-child(1):focus,
-  a:focus {
+  #splash-toc > a:hover,
+  #splash-toc > a:focus {
     font-weight: 700;
     color: #000000;
     background-color: #ffffff;

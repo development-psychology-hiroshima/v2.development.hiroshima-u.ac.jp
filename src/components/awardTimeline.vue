@@ -106,7 +106,7 @@ const awards = inject("awards").reduce(timelineComposer);
   );
 }
 
-#timeline > div:nth-child(1) > div.container-year > div.timeline-year {
+#timeline > div:first-child > div.container-year > div.timeline-year {
   margin-left: 0;
 }
 
@@ -191,7 +191,6 @@ const awards = inject("awards").reduce(timelineComposer);
   -webkit-box-orient: vertical;
   transition: all 0.125s ease-in-out;
   text-align: justify;
-  text-justify: inter-character !important; /* comes into effect in chrome >= 105? time will tell */
 }
 
 a {
@@ -229,10 +228,10 @@ a {
 
 .container-year,
 .container-card.upper {
-  transform: translateY(-52%);
+  transform: translateY(-54%);
 }
 
 .container-card.lower {
-  transform: translateY(52%);
+  transform: translateY(54%);
 }
 </style>

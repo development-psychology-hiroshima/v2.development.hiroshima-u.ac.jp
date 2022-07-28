@@ -11,8 +11,7 @@
   "dependencies": {
     "@vitejs/plugin-legacy": "^2.0.0",
     "js-yaml": "^4.1.0",
-    "vue": "^3.2.37",
-    "vuex": "^4.0.2"
+    "vue": "^3.2.37"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.9",
