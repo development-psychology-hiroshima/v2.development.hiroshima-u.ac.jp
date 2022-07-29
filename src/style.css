@@ -1,0 +1,21 @@
+.details-html > p {
+  margin-bottom: 1rem;
+}
+
+.details-html a {
+  color: #0b08f2;
+}
+
+.signature {
+  text-align: end;
+}
+
+.details-html > h3 {
+  margin-bottom: 0.25rem;
+}
+
+mark {
+  text-decoration: underline 2px wavy;
+  background: none;
+  color: #000;
+}

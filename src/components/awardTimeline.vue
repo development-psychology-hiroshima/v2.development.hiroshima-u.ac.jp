@@ -137,6 +137,7 @@ const awards = inject("awards").reduce(timelineComposer);
   flex-direction: column;
   align-items: center;
   margin-left: 1rem;
+  content-visibility: auto;
 }
 
 .container-year {
@@ -201,6 +202,8 @@ a {
   color: #ffffff;
   background-color: #000000;
   padding: 0.3rem 0.5rem;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .content-card:hover > .content-text {
