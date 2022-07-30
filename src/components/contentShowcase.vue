@@ -94,14 +94,30 @@ switch (props.config.type) {
 .container-showcase-preview {
   margin-bottom: 2rem;
 }
+
 .content-fade-enter-active,
 .content-fade-leave-active {
-  transition: opacity 0.375s ease-in-out;
+  transition: all 0.375s ease-in-out;
 }
 
 .content-fade-enter-from,
 .content-fade-leave-to {
   opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .content-fade-enter-from,
+  .content-fade-leave-to {
+    transform: translateY(100vh);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content-fade-enter-from,
+  .content-fade-leave-to {
+    opacity: 0;
+    transform: none;
+  }
 }
 
 .preview-cards {
