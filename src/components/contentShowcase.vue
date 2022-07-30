@@ -35,21 +35,14 @@ function getAbstract(contentString) {
   return textString.slice(0, 220) + "...";
 }
 
-switch (props.config.type) {
-  case "indexWelcome": {
-    displayContents.image = unref(params.image);
-    displayContents.title = unref(params.title);
-    displayContents.tags = unref(params.tags);
-    displayContents.abstract = getAbstract(unref(params.richTextContent));
-    displayContents.richTextContent = unref(params.richTextContent);
-    break;
-  }
+switch (params.type) {
+  case "indexWelcome":
   case "academicSupport": {
-    displayContents.image = unref(params.image);
-    displayContents.title = unref(params.title);
-    displayContents.tags = unref(params.tags);
+    displayContents.image = params.image;
+    displayContents.title = params.title;
+    displayContents.tags = params.tags;
     displayContents.abstract = getAbstract(unref(params.richTextContent));
-    displayContents.richTextContent = unref(params.richTextContent);
+    displayContents.richTextContent = params.richTextContent;
     break;
   }
 }

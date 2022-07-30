@@ -5,51 +5,57 @@ import ContentShowcase from "./contentShowcase.vue";
 const showType = inject("showType");
 const configs = [];
 
-switch (showType) {
-  case "indexWelcome": {
-    const rtc = inject("welcomeHtml").replaceAll(/\n|\s{2,}/g, "");
-    const welcomeBody = document.createElement("div");
-    welcomeBody.innerHTML = rtc || "";
-    const title = Array.from(welcomeBody.getElementsByTagName("h2") || []).pop().innerHTML;
-    const image = Array.from(welcomeBody.getElementsByTagName("img") || []).pop();
-    const richTextContent = (
-      welcomeBody.getElementsByClassName("main-content")[0] || ""
-    ).innerHTML;
+function parseTemplate(htmlTemplate) {
+  const cleanTemplate = htmlTemplate.replaceAll(/\n|\s{2,}/g, "");
+  const template = document.createElement("div");
+  template.innerHTML = cleanTemplate || "";
+  const title = template.querySelector("h2")?.innerHTML;
+  const image = template.querySelector("img")?.src;
 
-    welcomeBody.innerHTML = (
-      welcomeBody.getElementsByClassName("tags")[0] || ""
-    ).innerHTML;
-    const tags = Array.from(welcomeBody.getElementsByTagName("a") || []).map(
+  const richTextContent = template.querySelector(".main-content")?.innerHTML;
+
+  const tags = template.querySelector(".tags")
+    ? Array.from(template.querySelector(".tags")?.querySelectorAll("a")).map(
       (tag) => {
-        const tagName = tag.innerHTML;
-        const tagUrl = tag.href;
         return {
-          name: tagName,
-          url: tagUrl,
+          name: tag.innerHTML,
+          url: tag.href,
         };
       }
-    );
+    )
+    : [];
+
+  return {
+    title,
+    image,
+    tags,
+    richTextContent,
+  };
+}
+
+switch (showType) {
+  case "indexWelcome": {
+    const rtc = inject("welcomeHtml");
+    const { title, image, tags, richTextContent } = parseTemplate(rtc);
 
     configs.push({
       type: "indexWelcome",
-      image: image ? image.src : "",
+      image: image ? image : "",
       title: title ? title : "",
       tags: tags ? tags : [],
       richTextContent: richTextContent ? richTextContent : "",
     });
 
-    const academicRtc = inject("academicSupportHtml").replaceAll(/\n|\s{2,}/g, "");
-    const academicBody = document.createElement("div");
-    academicBody.innerHTML = academicRtc || "";
-    const academicTitle = Array.from(academicBody.getElementsByTagName("h2") || []).pop().innerHTML;
-    const academicImage = Array.from(academicBody.getElementsByTagName("img") || []).pop();
-    const academicRichTextContent = (
-      academicBody.getElementsByClassName("main-content")[0] || ""
-    ).innerHTML;
+    const academicRtc = inject("academicSupportHtml");
+    const {
+      image: academicImage,
+      title: academicTitle,
+      richTextContent: academicRichTextContent,
+    } = parseTemplate(academicRtc);
 
     configs.push({
       type: "academicSupport",
-      image: academicImage ? academicImage.src : "",
+      image: academicImage ? academicImage : "",
       title: academicTitle ? academicTitle : "",
       tags: [],
       richTextContent: academicRichTextContent ? academicRichTextContent : "",
@@ -60,7 +66,11 @@ switch (showType) {
 </script>
 
 <template>
-  <content-showcase v-for="(config, index) in configs" :key="index" :config="config" />
+  <content-showcase
+    v-for="(config, index) in configs"
+    :key="index"
+    :config="config"
+  />
 </template>
 
 <style scoped></style>

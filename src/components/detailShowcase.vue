@@ -8,8 +8,7 @@ import {
 } from "vue";
 
 const emit = defineEmits(["sigClose"]);
-
-const props = defineProps({
+defineProps({
   config: {
     type: Object,
     default() {
@@ -23,7 +22,6 @@ const props = defineProps({
     },
   },
 });
-
 function handleClose(e) {
   if ("Escape" === e.key) {
     emit("sigClose");
@@ -65,7 +63,7 @@ onBeforeUnmount(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(#0000007f, #000000 2px);
+  background: radial-gradient(#00000067, #000000e8 2px);
   background-size: 3px 3px;
 }
 
