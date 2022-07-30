@@ -141,13 +141,14 @@ function resolveUrl(url) {
   right: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #000;
   opacity: 0;
+  background: radial-gradient(#0000007f, #000000 2px);
+  background-size: 3px 3px;
   transition: opacity 0.625s ease-in-out;
 }
 
 #mask-underlay.show {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 #splash-menu {

@@ -46,13 +46,9 @@ onBeforeUnmount(() => {
     @keydown.esc="$emit('sigClose')"
   >
     <div class="details-html-container" @keydown.esc="$emit('sigClose')">
-      <div class="details-content">
+      <div class="details-content" @click.stop>
         <h2>{{ config.title }}</h2>
-        <div
-          class="details-html"
-          v-html="config.richTextContent"
-          @click.stop
-        ></div>
+        <div class="details-html" v-html="config.richTextContent"></div>
       </div>
     </div>
   </div>
@@ -65,11 +61,12 @@ onBeforeUnmount(() => {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: radial-gradient(#0000007f, #000000 2px);
+  background-size: 3px 3px;
 }
 
 .details-html-container {
