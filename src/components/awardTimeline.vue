@@ -204,6 +204,7 @@ a {
   padding: 0.3rem 0.5rem;
   user-select: none;
   -webkit-user-select: none;
+  font-weight: 700;
 }
 
 .content-card:hover > .content-text {

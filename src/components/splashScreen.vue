@@ -86,7 +86,7 @@ function resolveUrl(url) {
             id="splash-menu-button"
             role="button"
             aria-label="Toggle menu"
-            tabindex="2"
+            tabindex="1"
             @click="toggleMenu"
             @keydown.space="toggleMenu"
             @keydown.enter="toggleMenu"
@@ -107,7 +107,7 @@ function resolveUrl(url) {
             v-for="menuItem in menuItems"
             :key="menuItem.name"
             :href="resolveUrl(menuItem.url)"
-            tabindex="1"
+            tabindex="0"
             >{{
               "en" === userLanguage && menuItem.english
                 ? menuItem.english

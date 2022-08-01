@@ -10,7 +10,10 @@ function parseTemplate(htmlTemplate) {
   const template = document.createElement("div");
   template.innerHTML = cleanTemplate || "";
   const title = template.querySelector("h2")?.innerHTML;
-  const image = template.querySelector("img")?.src;
+  const image = {
+    src: template.querySelector("img")?.src,
+    alt: template.querySelector("img")?.alt,
+  };
 
   const richTextContent = template.querySelector(".main-content")?.innerHTML;
 

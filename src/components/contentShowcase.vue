@@ -61,7 +61,8 @@ switch (params.type) {
       <img
         class="preview-image"
         src="/src/assets/error.png"
-        v-lazy-load="displayContents.image"
+        v-lazy-load="displayContents.image.src"
+        :alt="displayContents.image?.alt"
       />
       <div class="preview-contents">
         <h2 class="preview-title">{{ displayContents.title }}</h2>
@@ -130,7 +131,6 @@ switch (params.type) {
   height: auto;
   max-height: 15rem;
   object-fit: cover;
-  mix-blend-mode: multiply;
 }
 
 .preview-contents {
@@ -140,7 +140,7 @@ switch (params.type) {
   align-items: flex-start;
   flex-wrap: nowrap;
   padding: 2rem;
-  box-shadow: 0 0 4rem 0 black;
+  box-shadow: 0 0 2rem 2rem #0000004d;
 }
 
 .preview-title {
@@ -164,10 +164,11 @@ switch (params.type) {
 .tag {
   display: flex;
   align-items: center;
-  color: #707070;
+  color: #6b6b6b;
   text-decoration: none;
   font-size: 0.8rem;
-  background-color: #eeeeee;
+  font-weight: 700;
+  background-color: #f0f0f0;
   border-radius: 0.25rem;
   padding: 0 0.5rem 0 0.25rem;
   height: 1.5rem;
@@ -178,6 +179,7 @@ switch (params.type) {
 .tag::before {
   content: "\e892";
   font-family: "Material Icons", serif;
+  padding-right: 0.1rem;
 }
 
 .preview-abstract {
