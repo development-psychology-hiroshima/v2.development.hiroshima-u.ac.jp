@@ -1,11 +1,5 @@
 <script setup>
-import {
-  defineEmits,
-  defineProps,
-  onBeforeUnmount,
-  onBeforeUpdate,
-  onMounted,
-} from "vue";
+import { onBeforeUnmount, onMounted } from "vue";
 
 const emit = defineEmits(["sigClose"]);
 defineProps({

@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref, unref } from "vue";
+import { ref, unref } from "vue";
 import DetailShowcase from "./detailShowcase.vue";
 
 const props = defineProps({

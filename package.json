@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite build; vite preview --host"
   },
+  "eslintIgnore": ["stats.html"],
   "dependencies": {
     "@vitejs/plugin-legacy": "^2.0.0",
     "js-yaml": "^4.1.0",
