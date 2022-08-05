@@ -280,21 +280,12 @@
       background: radial-gradient(#ffffffa1, #fff 2px);
       background-size: 4px 4px;
       backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       transition: all 0.375s ease-in-out;
-      opacity: 0;
-      transform: translateY(-100%);
     }
 
     #menu-bar.floating {
-      opacity: 1;
-      transform: translateY(0);
       box-shadow: 0 0.1rem 0.25rem 0 #0000000f;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      #menu-bar {
-        transform: none;
-      }
     }
 
     #content {

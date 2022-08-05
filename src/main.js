@@ -85,7 +85,7 @@ getConfig("configs/main.yml", "src/defaultMain.json").then((config) => {
     default: {
       let ticking = false;
       const handle = () => {
-        if (window.scrollY > 50) {
+        if (window.scrollY > 0) {
           document.getElementById("menu-bar")?.classList.add("floating");
         } else {
           document.getElementById("menu-bar")?.classList.remove("floating");
