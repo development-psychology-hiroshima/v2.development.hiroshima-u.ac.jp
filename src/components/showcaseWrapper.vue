@@ -65,6 +65,18 @@ switch (showType) {
     });
     break;
   }
+  case "faculties": {
+    const avatars = inject("faculties");
+    avatars.forEach((avatar) => {
+      const { name, avatar: avatarImage, link } = avatar;
+      configs.push({
+        type: "avatar",
+        name: name ? name : "",
+        avatar: avatarImage ? avatarImage : "",
+        link: link ? link : "",
+      });
+    });
+  }
 }
 </script>
 

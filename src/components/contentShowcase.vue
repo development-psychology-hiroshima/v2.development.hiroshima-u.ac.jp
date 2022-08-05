@@ -23,6 +23,7 @@ function sendSigClose() {
 }
 
 const displayContents = {
+  type: "",
   image: "",
   title: "",
   tags: [],
@@ -35,9 +36,20 @@ function getAbstract(contentString) {
   return textString.slice(0, 220) + "...";
 }
 
+function splitName(nameString) {
+  const nameArray = nameString.split(/\s/);
+  const firstName = nameArray[0];
+  const lastName = nameArray.slice(1).join(" ");
+  return {
+    firstName,
+    lastName,
+  };
+}
+
 switch (params.type) {
   case "indexWelcome":
   case "academicSupport": {
+    displayContents.type = "intro";
     displayContents.image = params.image;
     displayContents.title = params.title;
     displayContents.tags = params.tags;
@@ -45,11 +57,24 @@ switch (params.type) {
     displayContents.richTextContent = params.richTextContent;
     break;
   }
+  case "avatar": {
+    displayContents.type = "avatar";
+    displayContents.name = splitName(params.name);
+    displayContents.image = {
+      src: params.avatar,
+      alt: params.name,
+    };
+    displayContents.link = params.link;
+    displayContents.alt = params.name;
+  }
 }
 </script>
 
 <template>
-  <div class="container-showcase-preview">
+  <div
+    class="container-showcase-preview"
+    v-if="'intro' === displayContents.type"
+  >
     <transition name="content-fade">
       <detail-showcase
         v-if="showDetail"
@@ -57,7 +82,12 @@ switch (params.type) {
         @sigClose="sendSigClose"
       />
     </transition>
-    <div class="preview-cards" @click="showDetail = true">
+    <div
+      class="preview-cards"
+      tabindex="0"
+      @click="showDetail = true"
+      @keydown.enter="showDetail = true"
+    >
       <img
         class="preview-image"
         src="/src/assets/error.png"
@@ -82,6 +112,19 @@ switch (params.type) {
       </div>
     </div>
   </div>
+
+  <a class="container-avatar-preview" :href="displayContents.link" v-else>
+    <img
+      class="avatar-preview"
+      src="/src/assets/error.png"
+      v-lazy-load="displayContents.image.src"
+      :alt="displayContents.image?.alt"
+    />
+    <div class="avatar-text">
+      <span class="name-text">{{ displayContents.name.firstName }}</span>
+      <span class="name-text">{{ displayContents.name.lastName }}</span>
+    </div>
+  </a>
 </template>
 
 <style scoped>
@@ -193,6 +236,45 @@ switch (params.type) {
   content: "もっと見る";
   color: #0b08f2;
   cursor: pointer;
+}
+
+.container-avatar-preview {
+  display: grid;
+  grid-template-areas: "avatar";
+  place-items: stretch;
+  width: 15rem;
+  height: 15rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.avatar-preview {
+  grid-area: avatar;
+  width: 15rem;
+  height: 15rem;
+}
+
+.avatar-text {
+  grid-area: avatar;
+  background-color: #0b08f2;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  transform: translateY(100%);
+  transition: all 0.375s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container-avatar-preview:hover .avatar-text,
+.container-avatar-preview:focus .avatar-text {
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {

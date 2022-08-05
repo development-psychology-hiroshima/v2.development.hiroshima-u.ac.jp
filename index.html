@@ -80,8 +80,8 @@
 
         <div class="tags">
           <a href="index.html">アイデンティティ理論</a>
-          <a href="index.html">アタッチメント理論</a>
-          <a href="index.html">Dynamic systems theory (DST)</a>
+          <a href="umemura.html#attachment-theory">アタッチメント理論</a>
+          <a href="umemura.html#dst-theory">Dynamic systems theory (DST)</a>
         </div>
 
         <div class="main-content">
@@ -146,45 +146,35 @@
           alt="就職紹介"
         />
         <div class="main-content">
-          <h3 class="support-title">
-            先端的な専門知識を指導します！
-          </h3>
+          <h3 class="support-title">先端的な専門知識を指導します！</h3>
           <p class="support-content">
             アタッチメントやアイデンティティ，心理学研究法について，
             <mark>先端的な専門知識を指導します</mark>
             。
           </p>
 
-          <h3 class="support-title">
-            研究計画の立案を助けます！
-          </h3>
+          <h3 class="support-title">研究計画の立案を助けます！</h3>
           <p class="support-content">
             リサーチ・クエスチョンをどのように検討するのか，
             <mark>国際的に評価される研究</mark>
             には何が必要かを考え，丁寧に指導します。
           </p>
 
-          <h3 class="support-title">
-            研究費の獲得を支援します！
-          </h3>
+          <h3 class="support-title">研究費の獲得を支援します！</h3>
           <p class="support-content">
             十分な研究費獲得のための，
             <mark>申請書の書き方を指導します</mark>
             。過去に採択された申請書を共有しているので，参照できます。
           </p>
 
-          <h3 class="support-title">
-            迅速な研究実施を補助します！
-          </h3>
+          <h3 class="support-title">迅速な研究実施を補助します！</h3>
           <p class="support-content">
             観察法，面接法，質問紙法など，発達心理学で必要な研究法を熟知する教員が揃っています。過去に他のメンバーが集めたデータも利用可能なので，
             <mark>研究を効率化できます</mark>
             。
           </p>
 
-          <h3 class="support-title">
-            国際的な研究発信を助けます！
-          </h3>
+          <h3 class="support-title">国際的な研究発信を助けます！</h3>
           <p class="support-content">
             英語論文の指導や，国際学会の発表練習会を通して，
             <mark>成果を国際的に発信する力を養成します</mark>
@@ -200,18 +190,6 @@
     <script type="module" src="/src/main.js"></script>
   </body>
   <style>
-    #noscript {
-      position: absolute;
-      width: 100vw;
-      padding: 1rem 0;
-      background: #fae0b5;
-      z-index: 999;
-      text-align: center;
-      box-shadow: 0 4px 6px 0 #00000012;
-      user-select: none;
-      -webkit-user-select: none;
-    }
-
     html,
     body {
       font-family: "Helvetica Neue", "Noto Sans JP", -apple-system,
@@ -221,35 +199,6 @@
       color: #000;
       background: #e8eded;
       overflow-x: hidden;
-    }
-
-    @keyframes smooth-scroll1 {
-      from,
-      to {
-        scroll-behavior: smooth;
-      }
-    }
-
-    @keyframes smooth-scroll2 {
-      from,
-      to {
-        scroll-behavior: smooth;
-      }
-    }
-
-    html {
-      animation: smooth-scroll1 1s;
-    }
-
-    html:focus-within {
-      animation-name: smooth-scroll2;
-      scroll-behavior: smooth;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html:focus-within {
-        scroll-behavior: auto;
-      }
     }
 
     * {
@@ -282,7 +231,8 @@
       padding: 0.25rem 1rem;
     }
 
-    #container-introduction {
+    #container-introduction,
+    #container-research-professors {
       padding-top: 2rem;
       background-color: #e8eded;
       width: 100vw;
@@ -307,16 +257,11 @@
         font-size: 1.5rem;
       }
 
-      #container-introduction {
+      #container-introduction,
+      #container-research-professors {
         flex-direction: column;
         align-items: center;
       }
-    }
-
-    #container-research-professors {
-      background-color: #e8eded;
-      width: 100vw;
-      height: 80vh;
     }
   </style>
 </html>

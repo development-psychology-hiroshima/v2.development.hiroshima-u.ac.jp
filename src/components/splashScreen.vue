@@ -11,7 +11,7 @@ import { inject } from "vue";
  * @property {string} menuItem.show
  * @property {string} menuItem.url
  */
-const menuItems = inject("config").filter((item) => false !== item.show);
+const menuItems = inject("menuItems").filter((item) => false !== item.show);
 
 /**
  * @namespace backgrounds

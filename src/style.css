@@ -1,8 +1,51 @@
+#noscript {
+  position: absolute;
+  width: 100vw;
+  padding: 1rem 0;
+  background: #fae0b5;
+  z-index: 999;
+  text-align: center;
+  box-shadow: 0 4px 6px 0 #00000012;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@keyframes smooth-scroll1 {
+  from,
+  to {
+    scroll-behavior: smooth;
+  }
+}
+
+@keyframes smooth-scroll2 {
+  from,
+  to {
+    scroll-behavior: smooth;
+  }
+}
+
+html {
+  animation: smooth-scroll1 1s;
+  counter-reset: section;
+}
+
+html:focus-within {
+  animation-name: smooth-scroll2;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
+
 .details-html > p {
   margin-bottom: 1rem;
 }
 
-.details-html a {
+.details-html a,
+.content-text a {
   color: #0b08f2;
 }
 

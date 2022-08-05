@@ -24,3 +24,13 @@ dist-ssr
 *.sln
 *.sw?
 stats.html
+
+# Custom background image(s)
+public/backgrounds/*.jpg
+public/backgrounds/*.png
+public/backgrounds/*.gif
+public/backgrounds/*.webp
+
+# Default background images
+!public/backgrounds/background.lazyload.webp
+!public/backgrounds/background.webp
