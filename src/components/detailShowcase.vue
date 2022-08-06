@@ -120,6 +120,7 @@ h2 {
     max-width: 100vw;
     max-height: calc(100vh - 4rem);
     box-shadow: 0 -1rem 1rem 0 rgba(0, 0, 0, 0.1);
+    overscroll-behavior-y: contain;
   }
 }
 </style>
