@@ -90,7 +90,7 @@ switch (params.type) {
     >
       <img
         class="preview-image"
-        src="/src/assets/error.png"
+        src="/src/assets/fallback_image_error.png"
         v-lazy-load="displayContents.image.src"
         :alt="displayContents.image?.alt"
       />
@@ -113,10 +113,15 @@ switch (params.type) {
     </div>
   </div>
 
-  <a class="container-avatar-preview" :href="displayContents.link" v-else>
+  <a
+    class="container-avatar-preview"
+    :href="displayContents.link"
+    target="_blank"
+    v-else
+  >
     <img
       class="avatar-preview"
-      src="/src/assets/error.png"
+      src="/src/assets/fallback_image_error.png"
       v-lazy-load="displayContents.image.src"
       :alt="displayContents.image?.alt"
     />

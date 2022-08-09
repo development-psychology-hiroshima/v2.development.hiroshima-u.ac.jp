@@ -102,10 +102,8 @@ export default defineConfig({
       input: {
         index: fileURLToPath(new URL("./index.html", import.meta.url)),
         umemura: fileURLToPath(new URL("./umemura.html", import.meta.url)),
+        sugimura: fileURLToPath(new URL("./sugimura.html", import.meta.url)),
         // members: fileURLToPath(new URL("./members.html", import.meta.url)),
-        // research_activity_sugimura: fileURLToPath(
-        //   new URL("./research_activity_sugimura.html", import.meta.url)
-        // ),
         // research_activity_umemura: fileURLToPath(
         //   new URL("./research_activity_umemura.html", import.meta.url)
         // ),

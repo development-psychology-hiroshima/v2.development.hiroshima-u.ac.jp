@@ -9,16 +9,16 @@ import { getConfig } from "./utils.js";
 
 useRegisterSW();
 
-function getCurrentPage() {
-  const currentPage = window.location.href
+function getCurrentPage(urlString) {
+  const currentPage = urlString
     .split("/")
     .pop()
-    .replaceAll(/(.html$|#.*$)/g, "");
+    .replaceAll(/(\.html|#.*$)/g, "");
 
   return "" === currentPage ? "index" : currentPage;
 }
 
-const currentPage = getCurrentPage();
+const currentPage = getCurrentPage(window.location.href);
 console.log(`currentPage: ${currentPage}`);
 
 async function lazyLoad(el, binding) {
@@ -107,3 +107,5 @@ getConfig("configs/main.yml", "src/defaultMain.json").then((config) => {
     }
   }
 });
+
+export { getCurrentPage };

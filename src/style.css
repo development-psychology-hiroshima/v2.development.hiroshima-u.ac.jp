@@ -57,8 +57,39 @@ html:focus-within {
   margin-bottom: 0.25rem;
 }
 
+h2:target {
+  padding-top: 3rem;
+  margin-top: -3rem;
+}
+
 mark {
   text-decoration: underline 2px wavy;
   background: none;
   color: #000;
+}
+
+#menu-bar {
+  background: radial-gradient(#ffffffa1, #fff 2px);
+  background-size: 4px 4px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.375s ease-in-out;
+}
+
+.content-text > h3 {
+  counter-increment: section;
+}
+
+.content-text > h3::before {
+  content: counter(section) ". ";
+}
+
+.float-right {
+  float: right;
+}
+
+@media screen and (max-width: 768px) {
+  .float-right {
+    float: none;
+  }
 }
