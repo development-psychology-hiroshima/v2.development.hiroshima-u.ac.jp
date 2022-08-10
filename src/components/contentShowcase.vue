@@ -157,20 +157,20 @@ switch (params.type) {
 @media (prefers-reduced-motion: reduce) {
   .content-fade-enter-from,
   .content-fade-leave-to {
-    opacity: 0;
     transform: none;
+    opacity: 0;
   }
 }
 
 .preview-cards {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: stretch;
-  max-width: 40rem;
-  background-color: #ffffff;
   box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  max-width: 40rem;
   overflow: hidden;
 }
 
@@ -184,11 +184,11 @@ switch (params.type) {
 .preview-contents {
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: flex-start;
-  flex-wrap: nowrap;
-  padding: 2rem;
   box-shadow: 0 0 2rem 2rem #0000004d;
+  padding: 2rem;
 }
 
 .preview-title {
@@ -199,9 +199,9 @@ switch (params.type) {
 .preview-tags {
   display: flex;
   flex-wrap: wrap;
+  align-content: space-between;
   justify-content: flex-start;
   align-items: center;
-  align-content: space-between;
 }
 
 .preview-tags {
@@ -212,46 +212,46 @@ switch (params.type) {
 .tag {
   display: flex;
   align-items: center;
-  color: #6b6b6b;
-  text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: 700;
-  background-color: #f0f0f0;
-  border-radius: 0.25rem;
-  padding: 0 0.5rem 0 0.25rem;
-  height: 1.5rem;
   margin-top: 0.25rem;
   margin-right: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: #f0f0f0;
+  padding: 0 0.5rem 0 0.25rem;
+  min-height: 1.5rem;
+  color: #6b6b6b;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-decoration: none;
 }
 
 .tag::before {
+  padding-right: 0.1rem;
   content: "\e892";
   font-family: "Material Icons", serif;
-  padding-right: 0.1rem;
 }
 
 .preview-abstract {
+  margin-top: 0.25rem;
   color: #9a9a9a;
   font-size: 1rem;
-  margin-top: 0.25rem;
   text-align: justify;
 }
 
 .preview-abstract::after {
+  cursor: pointer;
   content: "もっと見る";
   color: #0b08f2;
-  cursor: pointer;
 }
 
 .container-avatar-preview {
   display: grid;
   grid-template-areas: "avatar";
   place-items: stretch;
+  margin-bottom: 2rem;
+  box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.1);
   width: 15rem;
   height: 15rem;
   overflow: hidden;
-  margin-bottom: 2rem;
-  box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.1);
 }
 
 .avatar-preview {
@@ -261,16 +261,16 @@ switch (params.type) {
 }
 
 .avatar-text {
-  grid-area: avatar;
-  background-color: #0b08f2;
-  color: #ffffff;
   display: flex;
+  grid-area: avatar;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  align-items: center;
   transform: translateY(100%);
   transition: all 0.375s ease-in-out;
+  background-color: #0b08f2;
+  color: #ffffff;
+  font-size: 3rem;
 }
 
 a {

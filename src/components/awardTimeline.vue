@@ -92,9 +92,9 @@ const awards = inject("awards").reduce(timelineComposer);
 
 <style scoped>
 #timeline {
-  margin-left: 10vw;
   display: flex;
   align-items: center;
+  margin-left: 10vw;
   background: linear-gradient(
     0deg,
     transparent 0%,
@@ -115,9 +115,8 @@ const awards = inject("awards").reduce(timelineComposer);
 }
 
 #timeline::before {
-  content: "";
-  width: 1rem;
-  height: 1rem;
+  transform: translateX(-0.8rem);
+  border-radius: 50%;
   background: radial-gradient(
     circle,
     black 0%,
@@ -127,8 +126,9 @@ const awards = inject("awards").reduce(timelineComposer);
     black 51%,
     black 100%
   );
-  border-radius: 50%;
-  transform: translateX(-0.8rem);
+  width: 1rem;
+  height: 1rem;
+  content: "";
 }
 
 .container-year,
@@ -136,8 +136,8 @@ const awards = inject("awards").reduce(timelineComposer);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 1rem;
   content-visibility: auto;
+  margin-left: 1rem;
 }
 
 .container-year {
@@ -145,11 +145,11 @@ const awards = inject("awards").reduce(timelineComposer);
 }
 
 .timeline-year {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #ffffff;
   background-color: #000000;
   padding: 0.2em 0.5em;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
 .timeline-by-year-container {
@@ -158,9 +158,9 @@ const awards = inject("awards").reduce(timelineComposer);
 }
 
 .container-card {
+  filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.1));
   margin: 0 0.5rem;
   width: 13rem;
-  filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.1));
 }
 
 .container-card:not(:nth-child(2)) {
@@ -168,43 +168,43 @@ const awards = inject("awards").reduce(timelineComposer);
 }
 
 .content-card {
+  grid-gap: 0.5rem;
   display: grid;
   grid-template-areas:
     "content"
     "menu";
   place-items: center;
-  grid-gap: 0.5rem;
-  overflow-wrap: anywhere;
-  height: fit-content;
   transition: all 0.125s ease-in-out;
   background-color: #ffffff;
   padding: 0.5em;
+  height: fit-content;
+  overflow-wrap: anywhere;
 }
 
 .content-text {
-  grid-area: content;
-  height: fit-content;
-  display: -webkit-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 6; /* number of lines to show */
+  -webkit-line-clamp: 6;
   line-clamp: 6;
   -webkit-box-orient: vertical;
+  display: -webkit-box;
+  grid-area: content;
   transition: all 0.125s ease-in-out;
+  height: fit-content;
+  overflow: hidden;
   text-align: justify;
+  text-overflow: ellipsis;
 }
 
 a {
-  grid-area: menu;
   display: inline-block;
-  width: fit-content;
-  text-decoration: none;
-  color: #ffffff;
+  grid-area: menu;
   background-color: #000000;
   padding: 0.3rem 0.5rem;
+  width: fit-content;
+  color: #ffffff;
+  font-weight: 700;
   user-select: none;
   -webkit-user-select: none;
-  font-weight: 700;
+  text-decoration: none;
 }
 
 .content-card:hover > .content-text {
@@ -212,10 +212,10 @@ a {
 }
 
 .dialog-triangle {
+  border-right: 0.5rem solid transparent;
+  border-left: 0.5rem solid transparent;
   width: 0;
   height: 0;
-  border-left: 0.5rem solid transparent;
-  border-right: 0.5rem solid transparent;
 }
 
 .dialog-triangle.year {

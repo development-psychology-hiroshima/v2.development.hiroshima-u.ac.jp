@@ -48,46 +48,43 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .showcase-container {
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 9999;
-  display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
   background: radial-gradient(#00000067, #000000e8 2px);
   background-size: 3px 3px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .details-html-container {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  align-items: flex-end;
+  box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
   max-width: 50vw;
   max-height: 80vh;
   overflow-y: scroll;
-  background-color: #ffffff;
-  display: flex;
-  align-content: flex-end;
-  flex-direction: column;
-  align-items: flex-end;
-  box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.1);
 }
 
 .details-html-container::before {
-  content: "\e5cd";
   position: absolute;
   transform: translateX(110%);
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIGlkPSJMYXllcl8xIiB4PSIwIiB5PSIwIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48c3R5bGU+LnN0MHtmaWxsOm5vbmU7c3Ryb2tlOiNmZmY7c3Ryb2tlLXdpZHRoOjIwO3N0cm9rZS1taXRlcmxpbWl0OjEwfTwvc3R5bGU+PHBhdGggZD0ibTExIDExIDQ5MCA0OTBNNTAxIDExIDExIDUwMSIgY2xhc3M9InN0MCIvPjwvc3ZnPg==");
+  background-position: center;
+  background-size: calc(100% - 1rem);
+  background-repeat: no-repeat;
+  background-color: #000000;
   width: 3rem;
   height: 3rem;
-  background-color: #000000;
-  font-family: "Material Symbols Outlined", serif;
-  font-variation-settings: "wght" 100;
-  font-size: 3rem;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  content: "";
 }
 
 .details-content {
@@ -98,9 +95,9 @@ onBeforeUnmount(() => {
 }
 
 h2 {
+  margin-bottom: 1.5rem;
   font-family: "Noto Serif JP", -apple-system, BlinkMacSystemFont, system-ui,
     serif;
-  margin-bottom: 1.5rem;
 }
 
 .details-html {
@@ -117,9 +114,9 @@ h2 {
   }
 
   .details-html-container {
+    box-shadow: 0 -1rem 1rem 0 rgba(0, 0, 0, 0.1);
     max-width: 100vw;
     max-height: calc(100vh - 4rem);
-    box-shadow: 0 -1rem 1rem 0 rgba(0, 0, 0, 0.1);
     overscroll-behavior-y: contain;
   }
 }
