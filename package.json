@@ -34,7 +34,7 @@
     "vite": "^3.0.9",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-imp": "^2.3.0",
-    "vite-plugin-pwa": "^0.12.3",
+    "vite-plugin-pwa": "^0.12.4",
     "vite-plugin-top-level-await": "^1.1.1"
   }
 }
