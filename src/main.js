@@ -22,7 +22,7 @@ const currentPage = getCurrentPage(window.location.href);
 console.log(`currentPage: ${currentPage}`);
 
 async function lazyLoad(el, binding) {
-  const isImageExists = function (urlString) {
+  function isImageExists(urlString) {
     return new Promise((resolve) => {
       if (!urlString) {
         resolve(false);

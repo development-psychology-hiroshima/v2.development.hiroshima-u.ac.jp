@@ -99,8 +99,8 @@ const awards = inject("awards").reduce(timelineComposer);
     0deg,
     transparent 0%,
     transparent 49%,
-    black 49%,
-    black 51%,
+    #000 49%,
+    #000 51%,
     transparent 51%,
     transparent 100%
   );
@@ -119,12 +119,12 @@ const awards = inject("awards").reduce(timelineComposer);
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    black 0%,
-    black 30%,
+    #000 0%,
+    #000 30%,
     #e8eded 30%,
     #e8eded 51%,
-    black 51%,
-    black 100%
+    #000 51%,
+    #000 100%
   );
   width: 1rem;
   height: 1rem;

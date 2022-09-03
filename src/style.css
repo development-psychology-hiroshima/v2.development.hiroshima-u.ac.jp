@@ -180,3 +180,8 @@ mark {
   align-self: center;
   width: fit-content;
 }
+
+.paper-list p {
+  text-indent: -2rem;
+  margin-left: 2rem;
+}

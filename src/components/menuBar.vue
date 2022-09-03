@@ -138,7 +138,7 @@ onBeforeUnmount(() => {
 }
 
 .menu-line.start.active {
-  transform: rotate(45deg)
+  transform: rotate3d(0, 0, 1, 45deg)
     translate3d(
       var(--trigo-param-positive, 10.608px),
       var(--trigo-param-positive, 10.608px),
@@ -148,11 +148,12 @@ onBeforeUnmount(() => {
 }
 
 .menu-line.middle.active {
+  transform: scale3d(0, 0, 0);
   opacity: 0;
 }
 
 .menu-line.end.active {
-  transform: rotate(-45deg)
+  transform: rotate3d(0, 0, 1, -45deg)
     translate3d(
       var(--trigo-param-positive, 10.608px),
       var(--trigo-param-negative, -10.608px),
@@ -180,7 +181,7 @@ onBeforeUnmount(() => {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   background: #ffffffe6;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 a {
@@ -228,7 +229,12 @@ a:hover {
   }
 
   .mobile-link {
-    padding-bottom: 0.75rem;
+    display: block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.5rem 0;
+    text-align: center;
+    width: 100vw;
     font-weight: 500;
   }
 }
