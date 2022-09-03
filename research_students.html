@@ -18,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta http-equiv="Content-Type" content="text/css" />
     <meta http-equiv="Content-Type" content="text/javascript" />
-    <title>メンバー紹介 - 広島大学発達心理学研究室</title>
+    <title>学生の研究活動 - 広島大学発達心理学研究室</title>
     <meta
       name="description"
       content="人間のこころの発達について、人が人として生きるうえでとても大切な社会性や社会的適応に焦点をあてて探究しています"
@@ -58,15 +58,20 @@
 
     <div id="menu-bar"></div>
     <div id="content">
-      <img
-        id="banner"
-        src="/images/banners/umemura_banner.webp"
-        alt="梅村先生の研究活動"
-      />
       <div class="content-text"></div>
     </div>
 
     <script type="module" src="/src/main.js"></script>
   </body>
-  <style></style>
+  <style>
+    .content-text {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 4rem;
+    }
+
+    p:not(li > p) {
+      margin-bottom: 1rem;
+    }
+  </style>
 </html>

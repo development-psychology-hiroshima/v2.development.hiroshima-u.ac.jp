@@ -104,12 +104,9 @@ export default defineConfig({
         umemura: fileURLToPath(new URL("./umemura.html", import.meta.url)),
         sugimura: fileURLToPath(new URL("./sugimura.html", import.meta.url)),
         members: fileURLToPath(new URL("./members.html", import.meta.url)),
-        // research_activity_umemura: fileURLToPath(
-        //   new URL("./research_activity_umemura.html", import.meta.url)
-        // ),
-        // research_activity_students: fileURLToPath(
-        //   new URL("./research_activity_students.html", import.meta.url)
-        // ),
+        research_students: fileURLToPath(
+          new URL("./research_students.html", import.meta.url)
+        ),
         // annual_schedule: fileURLToPath(
         //   new URL("./annual_schedule.html", import.meta.url)
         // ),
