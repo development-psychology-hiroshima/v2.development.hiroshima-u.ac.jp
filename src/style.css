@@ -1,8 +1,15 @@
+:root {
+  --color-set-link: #0b08f2;
+  --color-set-warning: #ffc107;
+  --trigo-param-positive: calc((0.6rem - 1px) / 1.414);
+  --trigo-param-negative: calc((0.6rem - 1px) / -1.414);
+}
+
 #noscript {
   position: absolute;
   z-index: 999;
   box-shadow: 0 4px 6px 0 #00000012;
-  background: #fae0b5;
+  background: var(--color-set-warning, #fae0b5);
   padding: 1rem 0;
   width: 100vw;
   user-select: none;
@@ -12,18 +19,19 @@
 
 html,
 body {
-  font-family: "Helvetica Neue", "Noto Sans JP", -apple-system,
-  BlinkMacSystemFont, system-ui, "Noto Serif JP", "Hiragino Sans",
-  "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック体, YuGothic,
-  "ヒラギノ角ゴ Pro W3", メイリオ, "Microsoft YaHei", sans-serif;
-  color: #000;
   background-color: #e8eded;
   overflow-x: hidden;
+  color: #000;
+  font-family: "Helvetica Neue", "Noto Sans JP", -apple-system,
+    BlinkMacSystemFont, system-ui, "Noto Serif JP", "Hiragino Sans",
+    "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック体, YuGothic,
+    "ヒラギノ角ゴ Pro W3", メイリオ, "Microsoft YaHei", sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -42,24 +50,19 @@ img#banner {
 
 #menu-bar {
   position: fixed;
-  padding: 0.5rem;
-  width: 100vw;
-}
-
-#menu-bar.floating {
-  box-shadow: 0 0.1rem 0.25rem 0 #0000000f;
+  top: 0;
 }
 
 #content {
+  background-color: #fff;
   width: 75vw;
   max-width: 1200px;
-  background-color: #fff;
 }
 
-#content a {
+#content a:not(.banner) {
   display: inline-block;
-  overflow-wrap: anywhere;
   word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 #content img {
@@ -69,14 +72,14 @@ img#banner {
 
 ul,
 li {
-  list-style: none;
   margin-bottom: 1rem;
+  list-style: none;
 }
 
 h1:not(.heading-container > h1) {
-  font-family: "Noto Serif JP", -apple-system, BlinkMacSystemFont, system-ui,
-  serif;
   margin-bottom: 2rem;
+  font-family: "Noto Serif JP", -apple-system, BlinkMacSystemFont, system-ui,
+    serif;
 }
 
 h2:not(.preview-title, .details-content > h2) {
@@ -92,7 +95,7 @@ h3 {
     width: 100vw;
   }
 
-  .content-text {
+  #content > .content-text {
     padding: 2rem;
   }
 }
@@ -133,7 +136,7 @@ html:focus-within {
 
 .details-html a,
 .content-text a {
-  color: #0b08f2;
+  color: var(--color-set-link, #6750a4);
 }
 
 .signature {
@@ -153,14 +156,6 @@ mark {
   background: none;
   color: #000;
   text-decoration: underline 2px wavy;
-}
-
-#menu-bar {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: all 0.375s ease-in-out;
-  background: radial-gradient(#ffffffa1, #fff 2px);
-  background-size: 4px 4px;
 }
 
 .content-text > h3 {

@@ -36,14 +36,10 @@ function getAbstract(contentString) {
   return textString.slice(0, 220) + "...";
 }
 
-function splitName(nameString) {
-  const nameArray = nameString.split(/\s/);
-  const firstName = nameArray[0];
-  const lastName = nameArray.slice(1).join(" ");
-  return {
-    firstName,
-    lastName,
-  };
+function getEmailLink(emailString) {
+  return emailString.startsWith("mailto:")
+    ? emailString
+    : "mailto:" + emailString;
 }
 
 switch (params.type) {
@@ -59,12 +55,14 @@ switch (params.type) {
   }
   case "avatar": {
     displayContents.type = "avatar";
-    displayContents.name = splitName(params.name);
+    displayContents.name = params.name;
     displayContents.image = {
       src: params.avatar,
       alt: params.name,
     };
-    displayContents.link = params.link;
+    displayContents.english = params.english;
+    displayContents.email = params.email;
+    displayContents.link = params["link"];
     displayContents.alt = params.name;
   }
 }
@@ -125,16 +123,36 @@ switch (params.type) {
       v-lazy-load="displayContents.image.src"
       :alt="displayContents.image?.alt"
     />
-    <div class="avatar-text">
-      <span class="name-text">{{ displayContents.name.firstName }}</span>
-      <span class="name-text">{{ displayContents.name.lastName }}</span>
+
+    <div class="container-avatar-info">
+      <p class="avatar-name">
+        {{ displayContents.name }}
+      </p>
+
+      <p class="avatar-english-name">
+        {{ displayContents.english }}
+      </p>
+
+      <div class="avatar-email" v-if="displayContents.email">
+        <a
+          :href="getEmailLink(displayContents.email)"
+        >
+          {{ displayContents.email }}
+        </a>
+      </div>
     </div>
   </a>
 </template>
 
 <style scoped>
-.container-showcase-preview {
+.container-showcase-preview,
+.container-avatar-preview {
+  transition: all 0.375s ease-in-out;
   margin-bottom: 2rem;
+}
+
+:is(.container-showcase-preview, .container-avatar-preview):hover {
+  box-shadow: 4px 4px 1rem 0 rgba(0, 0, 0, 0.2);
 }
 
 .content-fade-enter-active,
@@ -150,7 +168,7 @@ switch (params.type) {
 @media screen and (max-width: 768px) {
   .content-fade-enter-from,
   .content-fade-leave-to {
-    transform: translateY(100vh);
+    transform: translate3d(0, 100vh, 0);
   }
 }
 
@@ -240,46 +258,66 @@ switch (params.type) {
 .preview-abstract::after {
   cursor: pointer;
   content: "もっと見る";
-  color: #0b08f2;
+  color: var(--color-set-link, #6750a4);
 }
 
 .container-avatar-preview {
-  display: grid;
-  grid-template-areas: "avatar";
-  place-items: stretch;
-  margin-bottom: 2rem;
+  display: flex;
   box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.1);
-  width: 15rem;
-  height: 15rem;
+  background-color: #ffffff;
+  padding-right: 1rem;
+  min-width: clamp(20rem, 30vw, 30rem);
+  max-width: min(100vw, 30rem);
   overflow: hidden;
 }
 
 .avatar-preview {
-  grid-area: avatar;
-  width: 15rem;
-  height: 15rem;
+  width: 10rem;
+  height: 10rem;
 }
 
-.avatar-text {
+.container-avatar-info {
   display: flex;
-  grid-area: avatar;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  padding-left: 1rem;
+}
+
+.avatar-name {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: "Noto Serif JP", -apple-system, BlinkMacSystemFont, system-ui,
+    serif;
+}
+
+.avatar-english-name {
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.avatar-email {
+  display: flex;
+  flex: 1;
   align-items: center;
-  transform: translateY(100%);
-  transition: all 0.375s ease-in-out;
-  background-color: #0b08f2;
-  color: #ffffff;
-  font-size: 3rem;
+  color: #9a9a9a;
+  font-weight: 400;
+}
+
+.avatar-email::before {
+  padding-right: 0.1rem;
+  content: "\e0be";
+  font-family: "Material Icons", serif;
+}
+
+.avatar-email a {
+  color: #9a9a9a;
 }
 
 a {
   text-decoration: none;
-}
-
-.container-avatar-preview:hover .avatar-text,
-.container-avatar-preview:focus .avatar-text {
-  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
@@ -290,6 +328,25 @@ a {
   .tag {
     padding: 0.35rem 0.5rem 0.25rem 0.35rem;
     font-size: 1rem;
+  }
+
+  .container-avatar-preview {
+    width: calc(100vw - 2rem);
+  }
+
+  .avatar-preview {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .avatar-name {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  .avatar-email a {
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
   }
 }
 </style>

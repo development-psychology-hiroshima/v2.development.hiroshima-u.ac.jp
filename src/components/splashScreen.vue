@@ -156,7 +156,7 @@ function resolveUrl(url) {
   grid-template-columns: 1fr 1.618fr;
   grid-template-areas: "menu title";
   place-items: center;
-  transform: translateX(-38.2%);
+  transform: translate3d(-38.2%, 0, 0);
   z-index: 1;
   transition: all 0.625s ease-in-out;
   box-shadow: 61.8vw 0 0 0 rgba(0, 0, 0, 0);
@@ -175,7 +175,7 @@ function resolveUrl(url) {
 }
 
 #splash-menu.show-menu {
-  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
 }
 
 #splash-content {
@@ -218,14 +218,14 @@ function resolveUrl(url) {
 
 .arrow {
   fill: #ffffff;
-  transform: scaleX(-1);
+  transform: scale3d(-1, 1, 1);
   transition: transform 0.625s ease-in-out;
   width: 2em;
   height: 2em;
 }
 
 .arrow.point-left {
-  transform: scaleX(1);
+  transform: scale3d(1, 1, 1);
 }
 
 #splash-toc {
@@ -278,7 +278,7 @@ a {
   #splash-menu {
     grid-template-columns: repeat(2, 100vw);
     align-items: start;
-    transform: translateX(-100vw);
+    transform: translate3d(-100vw, 0, 0);
     background-color: #00000054;
     min-width: 200vw;
     color: #fff;
@@ -304,7 +304,7 @@ a {
   }
 
   #splash-menu.show-menu {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   #splash-menu-button {
@@ -319,7 +319,7 @@ a {
   }
 
   #splash-menu.show-menu #splash-menu-button {
-    transform: translateX(-100vw);
+    transform: translate3d(-100vw, 0, 0);
   }
 
   .arrow {

@@ -19,13 +19,13 @@ function parseTemplate(htmlTemplate) {
 
   const tags = template.querySelector(".tags")
     ? Array.from(template.querySelector(".tags")?.querySelectorAll("a")).map(
-      (tag) => {
-        return {
-          name: tag.innerHTML,
-          url: tag.href,
-        };
-      }
-    )
+        (tag) => {
+          return {
+            name: tag.innerHTML,
+            url: tag.href,
+          };
+        }
+      )
     : [];
 
   return {
@@ -68,12 +68,14 @@ switch (showType) {
   case "faculties": {
     const avatars = inject("faculties");
     avatars.forEach((avatar) => {
-      const { name, avatar: avatarImage, link } = avatar;
+      const { name, english, avatar: avatarImage, email, link } = avatar;
       configs.push({
         type: "avatar",
-        name: name ? name : "",
-        avatar: avatarImage ? avatarImage : "",
-        link: link ? link : "",
+        name: name || "",
+        english: english || "",
+        avatar: avatarImage || "",
+        email: email || "",
+        link: link || "",
       });
     });
   }

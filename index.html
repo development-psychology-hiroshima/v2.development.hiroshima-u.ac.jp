@@ -32,13 +32,13 @@
     <link
       rel="preload"
       as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      onload="this.rel='stylesheet';this.onload=null"
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap"
     />
     <link
       rel="preload"
       as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      onload="this.rel='stylesheet';this.onload=null"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
     <meta name="theme-color" content="#ffffff" />
@@ -177,10 +177,15 @@
         </div>
       </template>
     </div>
-    <div class="heading-container" id="title-research-professors">
-      <h1>先生の研究活動</h1>
+    <div class="heading-container" id="title-researches">
+      <h1>発達研の研究活動</h1>
     </div>
-    <div id="container-research-professors"></div>
+    <div id="container-researches"></div>
+
+    <div class="heading-container" id="title-career-development">
+      <h1>卒業生の進路</h1>
+    </div>
+    <div id="container-career-development"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
   <style>
@@ -203,7 +208,7 @@
     #splash {
       width: 100vw;
       height: 100vh;
-      background-color: #707070;
+      background-color: #ffffff;
     }
 
     .heading-container {
@@ -226,7 +231,8 @@
     }
 
     #container-introduction,
-    #container-research-professors {
+    #container-researches,
+    #container-career-development {
       padding-top: 2rem;
       background-color: #e8eded;
       width: 100vw;
@@ -253,7 +259,7 @@
       }
 
       #container-introduction,
-      #container-research-professors {
+      #container-researches {
         flex-direction: column;
         align-items: center;
       }

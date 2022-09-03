@@ -150,6 +150,7 @@ const awards = inject("awards").reduce(timelineComposer);
   color: #ffffff;
   font-weight: bold;
   font-size: 1.25rem;
+  user-select: none;
 }
 
 .timeline-by-year-container {
