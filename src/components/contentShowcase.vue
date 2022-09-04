@@ -114,7 +114,6 @@ switch (params.type) {
   <a
     class="container-avatar-preview"
     :href="displayContents.link"
-    target="_blank"
     v-else
   >
     <img

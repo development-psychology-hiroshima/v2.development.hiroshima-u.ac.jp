@@ -106,7 +106,9 @@ h2 {
 
 @media screen and (max-width: 768px) {
   .showcase-container {
+    top: -100vh;
     align-items: flex-end;
+    height: 200vh;
   }
 
   .details-html-container::before {
