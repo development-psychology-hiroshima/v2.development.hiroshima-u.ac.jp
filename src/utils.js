@@ -30,7 +30,7 @@ const getConfig = async (configName, fallbackConfigName) => {
    * @property {Array} projects - 現在進行中の研究項目
    * @property {Array} menuItems - メニュー項目
    * @property {Array} backgrounds - 背景画像
-   * @property {Array} faculties - 先生一覧
+   * @property {Array} faculties - 研究活動の執行主体一覧
    */
   let config = {};
 

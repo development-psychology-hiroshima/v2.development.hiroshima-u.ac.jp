@@ -11,14 +11,12 @@ useRegisterSW();
 
 function getCurrentPage(urlString) {
   const currentPage = urlString
-    .split("/")
-    .pop()
-    .replaceAll(/(\.html|#.*$)/g, "");
+    .replaceAll(/(^\/|\.html|#.*$)/g, "");
 
   return "" === currentPage ? "index" : currentPage;
 }
 
-const currentPage = getCurrentPage(window.location.href);
+const currentPage = getCurrentPage(window.location.pathname);
 console.log(`currentPage: ${currentPage}`);
 
 async function lazyLoad(el, binding) {
@@ -41,7 +39,7 @@ async function lazyLoad(el, binding) {
       };
       img.src = urlString;
     });
-  };
+  }
 
   let isExist = await isImageExists(binding.value);
 
@@ -50,48 +48,51 @@ async function lazyLoad(el, binding) {
   }
 }
 
-getConfig("configs/main.yml", "src/defaultMain.json").then((config) => {
-  switch (currentPage) {
-    case "index": {
-      createApp(SplashScreen)
-        .provide("menuItems", config.menuItems)
-        .provide("backgrounds", config.backgrounds)
-        .mount("#splash");
-      createApp(AwardTimeline)
-        .provide("awards", config.awards)
-        .mount("#container-timeline");
-      const welcomeHtml = (document.getElementById("welcome-message") || "")
-        .innerHTML;
-      const academicSupportHtml = (
-        document.getElementById("academic-support-introduction") || ""
-      ).innerHTML;
-      createApp(ShowcaseWrapper)
-        .provide("showType", "indexWelcome")
-        .provide("welcomeHtml", welcomeHtml)
-        .provide("academicSupportHtml", academicSupportHtml)
-        .directive("lazyLoad", {
-          mounted: async (el, binding) => await lazyLoad(el, binding),
-        })
-        .mount("#container-introduction");
-      createApp(ShowcaseWrapper)
-        .provide("showType", "faculties")
-        .provide("faculties", config.faculties)
-        .directive("lazyLoad", {
-          mounted: async (el, binding) => await lazyLoad(el, binding),
-        })
-        .mount("#container-researches");
-      break;
+getConfig("configs/main.yml", "src/defaultMain.json")
+  .then((config) => {
+    switch (currentPage) {
+      case "index": {
+        createApp(SplashScreen)
+          .provide("menuItems", config.menuItems)
+          .provide("backgrounds", config.backgrounds)
+          .mount("#splash");
+        createApp(AwardTimeline)
+          .provide("awards", config.awards)
+          .mount("#container-timeline");
+        const welcomeHtml = (document.getElementById("welcome-message") || "")
+          .innerHTML;
+        const academicSupportHtml = (
+          document.getElementById("academic-support-introduction") || ""
+        ).innerHTML;
+        createApp(ShowcaseWrapper)
+          .provide("showType", "indexWelcome")
+          .provide("welcomeHtml", welcomeHtml)
+          .provide("academicSupportHtml", academicSupportHtml)
+          .directive("lazyLoad", {
+            mounted: async (el, binding) => await lazyLoad(el, binding),
+          })
+          .mount("#container-introduction");
+        createApp(ShowcaseWrapper)
+          .provide("showType", "faculties")
+          .provide("faculties", config.faculties)
+          .directive("lazyLoad", {
+            mounted: async (el, binding) => await lazyLoad(el, binding),
+          })
+          .mount("#container-researches");
+        break;
+      }
+      default:
+        break;
     }
-    default:
-      break;
-  }
 
-  if ("index" !== currentPage) {
-
-    createApp(MenuBar)
-      .provide("menuItems", config.menuItems)
-      .mount("#menu-bar");
-  }
-});
+    if ("index" !== currentPage) {
+      createApp(MenuBar)
+        .provide("menuItems", config.menuItems)
+        .mount("#menu-bar");
+    }
+  })
+  .catch((e) => {
+    console.error(e);
+  });
 
 export { getCurrentPage };

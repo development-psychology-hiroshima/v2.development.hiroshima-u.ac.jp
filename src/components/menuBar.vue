@@ -68,7 +68,7 @@ onBeforeUnmount(() => {
     </div>
 
     <transition name="menu-transition">
-      <div id="menu-mobile" class="floating" v-show="showMenu">
+      <div id="menu-mobile" class="floating" v-show="showMenu" @click.stop>
         <a
           v-for="(menuItem, index) in menuItems"
           class="mobile-link"
@@ -94,7 +94,7 @@ onBeforeUnmount(() => {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: box-shadow 0.375s ease-in-out;
-  padding: 0.5rem;
+  padding: calc(0.5rem + 1px);
   width: 100vw;
 }
 
@@ -214,6 +214,14 @@ a:hover {
 .menu-transition-leave-to {
   transform: translate3d(0, -100%, 0);
   opacity: 0;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .menu-transition-enter-from,
+  .menu-transition-leave-to {
+    transform: none;
+    opacity: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {

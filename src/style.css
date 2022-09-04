@@ -50,7 +50,7 @@ img#banner {
 
 #menu-bar {
   position: fixed;
-  top: 0;
+  top: -1px;
 }
 
 #content {
