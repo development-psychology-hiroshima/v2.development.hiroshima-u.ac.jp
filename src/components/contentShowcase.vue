@@ -32,7 +32,10 @@ const displayContents = {
 };
 
 function getAbstract(contentString) {
-  const textString = contentString.replaceAll(/<[^>]*>/g, "");
+  const textString = contentString.replaceAll(
+    /<[^>]*>|<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,
+    ""
+  );
   return textString.slice(0, 220) + "...";
 }
 
@@ -111,11 +114,7 @@ switch (params.type) {
     </div>
   </div>
 
-  <a
-    class="container-avatar-preview"
-    :href="displayContents.link"
-    v-else
-  >
+  <a class="container-avatar-preview" :href="displayContents.link" v-else>
     <img
       class="avatar-preview"
       src="/src/assets/fallback_image_error.png"
@@ -133,9 +132,7 @@ switch (params.type) {
       </p>
 
       <div class="avatar-email" v-if="displayContents.email">
-        <a
-          :href="getEmailLink(displayContents.email)"
-        >
+        <a :href="getEmailLink(displayContents.email)">
           {{ displayContents.email }}
         </a>
       </div>
