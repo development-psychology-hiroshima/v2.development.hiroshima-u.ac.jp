@@ -1,4 +1,16 @@
 {
+  "projects": [
+    {
+      "title": "赤ちゃんの観察研究",
+      "url": "https://development.hiroshima-u.ac.jp/ad/HARP2_ad.pdf",
+      "downloadTitle": "赤ちゃんの観察研究",
+      "image": "https://development.hiroshima-u.ac.jp/images/ad/HARP2_ad.jpg"
+    }
+  ],
+  "backgrounds": {
+    "lazyload": "/backgrounds/background.lazyload.webp",
+    "normal": "/backgrounds/background.webp"
+  },
   "awards": [
     {
       "year": 2022,
@@ -8,7 +20,7 @@
     {
       "year": 2022,
       "text": "岩佐康弘・日原尚吾・杉村和美の研究発表が，中国四国心理学会第77回大会の大会優秀発表賞を受賞しました(2022.2)。",
-      "url": "https://cspa.hiroshima-u.ac.jp/award.html"
+      "url": "https://cspa.hiroshima-u.ac.jp/archives/award#:~:text=%E7%95%A5)-,%E5%B2%A9%E4%BD%90%E5%BA%B7%E5%BC%98,-%E6%95%99%E5%93%A1"
     },
     {
       "year": 2021,
@@ -68,7 +80,7 @@
     {
       "year": 2020,
       "text": "梅村比丘の論文が Journal of Early Adolescenceに掲載されました(2020.12)。",
-      "url": "https://www.sciencedirect.com/science/article/abs/pii/S092523122020000X"
+      "url": "https://journals.sagepub.com/doi/10.1177/0272431620978531"
     },
     {
       "year": 2020,
@@ -137,12 +149,6 @@
       "text": "日原尚吾・石橋彩波・梅村比丘・杉村和美の論文がEmerging Adulthoodに掲載されました。",
       "url": "https://journals.sagepub.com/doi/full/10.1177/2167696819858457"
     }
-  ],
-  "bannerImages": [
-    "images/syugo/sugimuraken_syugo202203.jpeg",
-    "images/syugo/umemuraken_syugo202203.jpeg",
-    "images/2019_aki_sinkan.jpeg",
-    "https://development.hiroshima-u.ac.jp/images/sche/201804shinkan.jpg"
   ],
   "graduates": [
     {
@@ -319,7 +325,7 @@
       "teacher": "梅村比丘"
     }
   ],
-  "obog": [
+  "obogs": [
     {
       "name": "徳岡 大",
       "position": "高松大学 講師(2020年度博士号取得)",
@@ -367,7 +373,7 @@
         },
         {
           "title": "教育・研究業績一覧 (Curriculum vitae)",
-          "content": "<a href=\"rese/Shogo_Hihara/教育・研究業績書_20210817.pdf\" download=\"教育・研究業績書_20210817.pdf\" target=\"教育・研究業績書_20210817.pdf\">日本語</a>／<a href=\"rese/Shogo_Hihara/CV_Shogo Hihara _20210817.pdf\" download=\"CV_Shogo Hihara _20210817.pdf\" target=\"CV_Shogo Hihara _20210817.pdf\">English</a>"
+          "content": "<a href=\"rese/Shogo_Hihara/教育・研究業績書_20210817.pdf\" download=\"教育・研究業績書_20210817.pdf\" target=\"教育・研究業績書_20210817.pdf\">日本語</a>／<a href=\"rese/Shogo_Hihara/CV_Shogo Hihara _20210817.pdf\" download=\"CV_Shogo Hihara _20210817.pdf\" target=\"_blank\">English</a>"
         }
       ]
     },
@@ -395,7 +401,7 @@
       "others": [
         {
           "title": "修士論文題目",
-          "content": "<a href=\"rese/rese/abstract/ryousin_asai2018.pdf\" target=\"ryousin_asai2018\" download=\"両親間葛藤のある青年の情緒的自立と適応の観点\">両親間葛藤のある青年の情緒的自立と適応の観点</a>"
+          "content": "<a href=\"rese/rese/abstract/ryousin_asai2018.pdf\" target=\"_blank\" download=\"両親間葛藤のある青年の情緒的自立と適応の観点\">両親間葛藤のある青年の情緒的自立と適応の観点</a>"
         },
         {
           "title": "進路",
@@ -404,47 +410,69 @@
       ]
     }
   ],
+  "faculties": [
+    {
+      "name": "杉村　和美",
+      "english": "Sugimura Kazumi",
+      "avatar": "/images/sugimura.webp",
+      "email": "ksugimura@hiroshima-u.ac.jp",
+      "link": "/sugimura.html"
+    },
+    {
+      "name": "梅村　比丘",
+      "english": "Umemura Tomotaka",
+      "avatar": "/images/umemura.webp",
+      "email": "umemura@hiroshima-u.ac.jp",
+      "link": "/umemura.html"
+    },
+    {
+      "name": "学生の研究活動",
+      "english": "Students' Research",
+      "avatar": "/images/students.svg",
+      "link": "/research_students.html"
+    }
+  ],
   "menuItems": [
     {
-      "name": "ホーム",
-      "english": "home",
+      "name": "HOME",
+      "english": "Home",
       "url": "index.html",
       "show": true
     },
     {
+      "name": "研究室の話題",
+      "english": "Awards",
+      "url": "index.html#title-awards",
+      "show": true
+    },
+    {
+      "name": "研究室の紹介",
+      "english": "Introduction",
+      "url": "index.html#title-intro",
+      "show": true
+    },
+    {
+      "name": "発達研の研究活動",
+      "english": "Research activities",
+      "url": "index.html#title-researches",
+      "show": true
+    },
+    {
       "name": "メンバー紹介",
-      "english": "members",
+      "english": "Members",
       "url": "members.html",
       "show": true
     },
     {
-      "name": "杉村和美の研究活動",
-      "english": "sugimura's activities",
-      "url": "research_activity_sugimura.html",
-      "show": true
-    },
-    {
-      "name": "梅村比丘の研究活動",
-      "english": "umemura's activities",
-      "url": "research_activity_umemura.html",
-      "show": true
-    },
-    {
-      "name": "一例",
-      "english": "an example",
-      "url": "path_to_webpage.html",
-      "show": false
-    },
-    {
-      "name": "学生の研究活動",
-      "english": "students' activities",
-      "url": "research_activity_students.html",
-      "show": true
-    },
-    {
       "name": "年間スケジュール",
-      "english": "annual schedule",
+      "english": "Annual schedule",
       "url": "annual_schedule.html",
+      "show": true
+    },
+    {
+      "name": "お問合せ",
+      "english": "Contact",
+      "url": "contact.html",
       "show": true
     }
   ]

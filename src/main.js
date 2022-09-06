@@ -48,7 +48,7 @@ async function lazyLoad(el, binding) {
   }
 }
 
-getConfig("configs/main.yml", "src/defaultMain.json")
+getConfig("configs/main.yml", "configs/fallback/main.json")
   .then((config) => {
     switch (currentPage) {
       case "index": {
