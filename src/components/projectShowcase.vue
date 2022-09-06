@@ -32,7 +32,7 @@ function parseProject(projectArray) {
   const htmlTemplate = projectArray.map((project) => {
     return `<h3>${project.title}</h3>${
       project.url
-        ? `<a href=\"${project.url}\" target="_blank"><img src=\"${project.image}\" alt=\"${project.downloadTitle}\" /></a>`
+        ? `<a href=\"${project.url}\" target="_blank" download=\"${project.downloadTitle}\" aria-label=\"${project.downloadTitle}\"><img src=\"${project.image}\" alt=\"${project.downloadTitle}\" /></a>`
         : `<img src=\"${project.image}\" alt=\"${project.downloadTitle}\" />`
     }`;
   });

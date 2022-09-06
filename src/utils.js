@@ -22,15 +22,88 @@ const fetchTimeout = (url, ms, { signal, ...options } = {}) => {
 
 const controller = new AbortController();
 
+/**
+ * @typedef {Object} project
+ * @property {String} title
+ * @property {String} url
+ * @property {String} image
+ * @property {String} downloadTitle - filename of the download
+ */
+
+/**
+ * @typedef {Object} backgrounds
+ * @property {String} lazyload
+ * @property {String} normal
+ */
+
+/**
+ * @typedef {Object} award
+ * @property {String} year
+ * @property {String} text
+ * @property {String} url
+ */
+
+/**
+ * @typedef {Object} graduate
+ * @property {String} year
+ * @property {String} undergrad
+ * @property {String} grad
+ */
+
+/**
+ * @typedef {Object} member
+ * @property {String} name
+ * @property {String} position
+ * @property {String} image
+ * @property {String} intro
+ * @property {String} interest
+ * @property {String} others
+ */
+
+/**
+ * @typedef {Object} obog
+ * @property {String} name
+ * @property {String} position
+ * @property {String} intro
+ * @property {String} interest
+ * @property {String} others
+ */
+
+/**
+ * @typedef {Object} faculty
+ * @property {String} name
+ * @property {String} english
+ * @property {String} avatar
+ * @property {String} email
+ * @property {String} link
+ */
+
+/**
+ * @typedef {Object} menuItem
+ * @property {String} name
+ * @property {String} english
+ * @property {String} url
+ * @property {String} show
+ */
+
+/**
+ * @function getConfig
+ * @param {String} configName
+ * @param {String} fallbackConfigName
+ * @return {Promise<Object|undefined>} config
+ */
 const getConfig = async (configName, fallbackConfigName) => {
-  // TODO finish JSDoc
   /**
    * @namespace config
    * @type {Object}
-   * @property {Array} projects - 現在進行中の研究項目
-   * @property {Array} menuItems - メニュー項目
-   * @property {Array} backgrounds - 背景画像
-   * @property {Array} faculties - 研究活動の執行主体一覧
+   * @property {Array.<project>} projects - 現在進行中の研究項目
+   * @property {Object.<backgrounds>} backgrounds - 背景画像
+   * @property {Array.<award>} awards - 「研究室の話題」
+   * @property {Array.<graduate>} graduates - 「卒業生の進路」
+   * @property {Array.<member>} members - 「メンバー紹介」
+   * @property {Array.<obog>} obogs - 「過去のメンバー」
+   * @property {Array.<faculty>} faculties - 研究活動の執行主体一覧
+   * @property {Array.<menuItem>} menuItems - メニュー項目
    */
   let config = {};
 
