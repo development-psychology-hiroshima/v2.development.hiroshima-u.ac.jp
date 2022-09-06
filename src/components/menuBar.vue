@@ -50,7 +50,7 @@ onBeforeUnmount(() => {
     </div>
 
     <div id="menubar-mobile" class="floating">
-      <div class="mobile-title">広島大学発達心理学研究室</div>
+      <a class="mobile-title" href="index.html">広島大学発達心理学研究室</a>
       <div
         class="button"
         role="button"
@@ -113,6 +113,8 @@ onBeforeUnmount(() => {
 }
 
 .mobile-title {
+  margin: 0;
+  padding: 0;
   justify-self: flex-start;
   font-weight: 700;
   font-size: 1.2rem;

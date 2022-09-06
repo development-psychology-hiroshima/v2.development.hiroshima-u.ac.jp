@@ -2,6 +2,7 @@
 import { onBeforeUnmount, onMounted } from "vue";
 
 const emit = defineEmits(["sigClose"]);
+
 defineProps({
   config: {
     type: Object,
@@ -81,7 +82,7 @@ onBeforeUnmount(() => {
   background-position: center;
   background-size: calc(100% - 1rem);
   background-repeat: no-repeat;
-  background-color: #000000;
+  background-color: #730202;
   width: 3rem;
   height: 3rem;
   content: "";

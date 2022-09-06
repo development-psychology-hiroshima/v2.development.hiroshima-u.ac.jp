@@ -18,7 +18,7 @@ const props = defineProps({
 
 const params = unref(props.config);
 const showDetail = ref(false);
-function sendSigClose() {
+function handleSigClose() {
   showDetail.value = false;
 }
 
@@ -80,7 +80,7 @@ switch (params.type) {
       <detail-showcase
         v-if="showDetail"
         :config="displayContents"
-        @sigClose="sendSigClose"
+        @sigClose="handleSigClose"
       />
     </transition>
     <div

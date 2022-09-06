@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import AwardTimeline from "./components/awardTimeline.vue";
 import MenuBar from "./components/menuBar.vue";
+import ProjectShowcase from "./components/projectShowcase.vue";
 import ShowcaseWrapper from "./components/showcaseWrapper.vue";
 import SplashScreen from "./components/splashScreen.vue";
 import { useRegisterSW } from "virtual:pwa-register/vue";
@@ -10,8 +11,7 @@ import { getConfig } from "./utils.js";
 useRegisterSW();
 
 function getCurrentPage(urlString) {
-  const currentPage = urlString
-    .replaceAll(/(^\/|\.html|#.*$)/g, "");
+  const currentPage = urlString.replaceAll(/(^\/|\.html|#.*$)/g, "");
 
   return "" === currentPage ? "index" : currentPage;
 }
@@ -56,6 +56,9 @@ getConfig("configs/main.yml", "src/defaultMain.json")
           .provide("menuItems", config.menuItems)
           .provide("backgrounds", config.backgrounds)
           .mount("#splash");
+        createApp(ProjectShowcase)
+          .provide("projects", config.projects)
+          .mount("#project-showcase");
         createApp(AwardTimeline)
           .provide("awards", config.awards)
           .mount("#container-timeline");
