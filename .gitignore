@@ -23,13 +23,21 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Rollup visualizer generated file(s)
 stats.html
 
 # Custom background image(s)
 public/backgrounds/*.jpg
+public/backgrounds/*.jpeg
+public/backgrounds/*.JPG
+public/backgrounds/*.JPEG
 public/backgrounds/*.png
+public/backgrounds/*.PNG
 public/backgrounds/*.gif
+public/backgrounds/*.GIF
 public/backgrounds/*.webp
+public/backgrounds/*.WEBP
 
 # Default background images
 !public/backgrounds/background.lazyload.webp
