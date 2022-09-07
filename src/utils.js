@@ -22,77 +22,78 @@ const fetchTimeout = (url, ms, { signal, ...options } = {}) => {
 
 const controller = new AbortController();
 
-/**
- * @typedef {Object} project
- * @property {String} title
- * @property {String} url
- * @property {String} image
- * @property {String} downloadTitle - filename of the download
- */
-
-/**
- * @typedef {Object} backgrounds
- * @property {String} lazyload
- * @property {String} normal
- */
-
-/**
- * @typedef {Object} award
- * @property {String} year
- * @property {String} text
- * @property {String} url
- */
-
-/**
- * @typedef {Object} graduate
- * @property {String} year
- * @property {String} undergrad
- * @property {String} grad
- */
-
-/**
- * @typedef {Object} member
- * @property {String} name
- * @property {String} position
- * @property {String} image
- * @property {String} intro
- * @property {String} interest
- * @property {String} others
- */
-
-/**
- * @typedef {Object} obog
- * @property {String} name
- * @property {String} position
- * @property {String} intro
- * @property {String} interest
- * @property {String} others
- */
-
-/**
- * @typedef {Object} faculty
- * @property {String} name
- * @property {String} english
- * @property {String} avatar
- * @property {String} email
- * @property {String} link
- */
-
-/**
- * @typedef {Object} menuItem
- * @property {String} name
- * @property {String} english
- * @property {String} url
- * @property {String} show
- */
-
-/**
- * @function getConfig
- * @param {String} configName
- * @param {String} fallbackConfigName
- * @return {Promise<Object|undefined>} config
- */
 const getConfig = async (configName, fallbackConfigName) => {
+  /**
+   * @typedef {Object} project
+   * @property {String} title
+   * @property {String} url
+   * @property {String} image
+   * @property {String} downloadTitle - filename of the download
+   */
+
+  /**
+   * @typedef {Object} backgrounds
+   * @property {String} lazyload
+   * @property {String} normal
+   */
+
+  /**
+   * @typedef {Object} award
+   * @property {String} year
+   * @property {String} text
+   * @property {String} url
+   */
+
+  /**
+   * @typedef {Object} graduate
+   * @property {String} year
+   * @property {String} undergrad
+   * @property {String} grad
+   */
+
+  /**
+   * @typedef {Object} member
+   * @property {String} name
+   * @property {String} position
+   * @property {String} image
+   * @property {String} intro
+   * @property {String} interest
+   * @property {String} others
+   */
+
+  /**
+   * @typedef {Object} obog
+   * @property {String} name
+   * @property {String} position
+   * @property {String} intro
+   * @property {String} interest
+   * @property {String} others
+   */
+
+  /**
+   * @typedef {Object} faculty
+   * @property {String} name
+   * @property {String} english
+   * @property {String} avatar
+   * @property {String} email
+   * @property {String} link
+   */
+
+  /**
+   * @typedef {Object} menuItem
+   * @property {String} name
+   * @property {String} english
+   * @property {String} url
+   * @property {String} show
+   */
+
+  /**
+   * @function getConfig
+   * @param {String} configName
+   * @param {String} fallbackConfigName
+   * @return {Promise<Object|undefined>} config
+   */
+
   /**
    * @namespace config
    * @type {Object}

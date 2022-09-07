@@ -2,7 +2,15 @@
 import { onBeforeUnmount, onMounted } from "vue";
 
 const emit = defineEmits(["sigClose"]);
-
+/**
+ * @namespace config
+ * @type {Object}
+ * @property {String} type
+ * @property {String} image
+ * @property {String} title
+ * @property {Array} tags
+ * @property {String} richTextContent
+ */
 defineProps({
   config: {
     type: Object,
