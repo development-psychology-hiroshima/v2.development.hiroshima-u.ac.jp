@@ -16,7 +16,7 @@ function parseTemplate(htmlTemplate) {
   };
 
   const richTextContent = template.querySelector(".main-content")?.innerHTML;
-
+  /* eslint-disable indent */
   const tags = template.querySelector(".tags")
     ? Array.from(template.querySelector(".tags")?.querySelectorAll("a")).map(
         (tag) => {
@@ -27,6 +27,7 @@ function parseTemplate(htmlTemplate) {
         }
       )
     : [];
+  /* eslint-enable indent */
 
   return {
     title,

@@ -27,19 +27,19 @@ const projectsHash = cyrb53(JSON.stringify(projects)).toString();
 
 const isEqualHash = ref(projectsHash === localStorage.getItem("project-hash"));
 const showDetail = ref(false);
-
+/* eslint-disable max-len */
 function parseProject(projectArray) {
   const htmlTemplate = projectArray.map((project) => {
     return `<h3>${project.title}</h3>${
       project.url
-        ? `<a href=\"${project.url}\" target="_blank" download=\"${project.downloadTitle}\" aria-label=\"${project.downloadTitle}\"><img src=\"${project.image}\" alt=\"${project.downloadTitle}\" /></a>`
-        : `<img src=\"${project.image}\" alt=\"${project.downloadTitle}\" />`
+        ? `<a href="${project.url}" target="_blank" download="${project.downloadTitle}" aria-label="${project.downloadTitle}"><img src="${project.image}" alt="${project.downloadTitle}" /></a>`
+        : `<img src="${project.image}" alt="${project.downloadTitle}" />`
     }`;
   });
 
   return htmlTemplate.join("");
 }
-
+/* eslint-enable max-len */
 const displayContents = {
   title: "現在進行中のプロジェクト",
   richTextContent: parseProject(projects),

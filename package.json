@@ -7,7 +7,7 @@
     "dev": "vite --host",
     "build": "node ./CI+CD/convertYaml.js; vite build",
     "preview": "node ./CI+CD/convertYaml.js; vite build; vite preview --host",
-    "code-check": "npx eslint --config ./.eslintrc.json . --ext .js,.vue"
+    "code-check": "npx eslint --config ./.eslintrc.json ./src/ --ext .js,.vue"
   },
   "eslintIgnore": [
     "stats.html"

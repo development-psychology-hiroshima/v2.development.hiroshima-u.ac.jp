@@ -1,4 +1,5 @@
 <script setup>
+/* eslint-disable max-len */
 import { onBeforeUnmount, onMounted } from "vue";
 
 const emit = defineEmits(["sigClose"]);
