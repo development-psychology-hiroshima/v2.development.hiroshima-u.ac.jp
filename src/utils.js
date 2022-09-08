@@ -22,6 +22,14 @@ const fetchTimeout = (url, ms, { signal, ...options } = {}) => {
 
 const controller = new AbortController();
 
+/**
+ * @function getConfig
+ * @param {String} configName
+ * @param {String} fallbackConfigName
+ * @return {Promise<Object>} config
+ * @example
+ * const config = await getConfig("main.yml", "fallback/main.json");
+ */
 const getConfig = async (configName, fallbackConfigName) => {
   /**
    * @typedef {Object} project
@@ -88,13 +96,6 @@ const getConfig = async (configName, fallbackConfigName) => {
    */
 
   /**
-   * @function getConfig
-   * @param {String} configName
-   * @param {String} fallbackConfigName
-   * @return {Promise<Object|undefined>} config
-   */
-
-  /**
    * @namespace config
    * @type {Object}
    * @property {Array.<project>} projects - 現在進行中の研究項目
@@ -136,7 +137,7 @@ const getConfig = async (configName, fallbackConfigName) => {
           console.error(
             `Get fallback config failed with error: ${e.message}, please contact the maintenance personnel.`
           );
-          return undefined;
+          return {};
         });
     }
   }

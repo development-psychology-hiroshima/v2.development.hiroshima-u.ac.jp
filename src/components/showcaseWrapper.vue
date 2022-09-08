@@ -44,9 +44,9 @@ switch (showType) {
 
     configs.push({
       type: "indexWelcome",
-      image: image ? image : "",
-      title: title ? title : "",
-      tags: tags ? tags : [],
+      image: image || "",
+      title: title || "",
+      tags: tags || [],
       richTextContent: richTextContent ? richTextContent : "",
     });
 
@@ -59,8 +59,8 @@ switch (showType) {
 
     configs.push({
       type: "academicSupport",
-      image: academicImage ? academicImage : "",
-      title: academicTitle ? academicTitle : "",
+      image: academicImage || "",
+      title: academicTitle || "",
       tags: [],
       richTextContent: academicRichTextContent ? academicRichTextContent : "",
     });
