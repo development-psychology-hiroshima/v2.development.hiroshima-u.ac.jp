@@ -100,28 +100,8 @@ h3 {
   }
 }
 
-@keyframes smooth-scroll1 {
-  from,
-  to {
-    scroll-behavior: smooth;
-  }
-}
-
-@keyframes smooth-scroll2 {
-  from,
-  to {
-    scroll-behavior: smooth;
-  }
-}
-
 html {
-  animation: smooth-scroll1 1s;
   counter-reset: section;
-}
-
-html:focus-within {
-  animation-name: smooth-scroll2;
-  scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: reduce) {
