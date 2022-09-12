@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install node modules
         run: npm install
-      - name: Check code
+      - name: ESLint Check
         id: check-code
         run: |
           check_output=$(npm run --silent code-check || :)

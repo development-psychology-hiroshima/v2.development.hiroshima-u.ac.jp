@@ -103,7 +103,7 @@ const getConfig = async (configName, fallbackConfigName) => {
    * @property {Array.<award>} awards - 「研究室の話題」
    * @property {Array.<graduate>} graduates - 「卒業生の進路」
    * @property {Array.<member>} members - 「メンバー紹介」
-   * @property {Array.<obog>} obogs - 「過去のメンバー」
+   * @property {Array.<obog>} obogs - 「卒業したメンバー」
    * @property {Array.<faculty>} faculties - 研究活動の執行主体一覧
    * @property {Array.<menuItem>} menuItems - メニュー項目
    */

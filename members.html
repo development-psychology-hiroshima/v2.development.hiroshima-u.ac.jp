@@ -60,13 +60,27 @@
     <div id="content">
       <img
         id="banner"
-        src="/images/banners/umemura_banner.webp"
-        alt="梅村先生の研究活動"
+        src="/images/banners/banner_2022_zemi_fuukei.webp"
+        alt="ゼミの風景"
       />
-      <div class="content-text"></div>
+      <div class="content-text">
+        <div id="app-mount-point"></div>
+      </div>
     </div>
 
     <script type="module" src="/src/main.js"></script>
   </body>
-  <style></style>
+  <style>
+    #content {
+      padding-top: 3rem;
+    }
+    #app-mount-point {
+      display: contents;
+    }
+    .content-text {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 4rem;
+    }
+  </style>
 </html>
