@@ -113,9 +113,9 @@ onBeforeUnmount(() => {
 }
 
 .mobile-title {
+  justify-self: flex-start;
   margin: 0;
   padding: 0;
-  justify-self: flex-start;
   font-weight: 700;
   font-size: 1.2rem;
 }
@@ -243,9 +243,9 @@ a:hover {
     box-sizing: border-box;
     margin: 0;
     padding: 0.5rem 0;
-    text-align: center;
     width: 100vw;
     font-weight: 500;
+    text-align: center;
   }
 }
 </style>
