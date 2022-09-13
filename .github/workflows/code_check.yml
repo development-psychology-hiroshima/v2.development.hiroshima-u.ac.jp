@@ -1,4 +1,4 @@
-name: Code check
+name: ESLint Check
 
 on: push
 
@@ -7,13 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Install node modules
         run: npm install
       - name: ESLint Check
         id: check-code
         run: |
-          check_output=$(npm run --silent code-check || :)
+          check_output=$(npm run --silent check || :)
           check_failed=$([[ -z "$check_output" ]] && echo 'false' || echo 'true')
           check_output=$(echo -e "\`\`\`${check_output}\n\`\`\`")
           check_output="${check_output//'%'/'%25'}"

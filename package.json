@@ -7,7 +7,8 @@
     "dev": "vite --host",
     "build": "node ./CI+CD/convertYaml.js; vite build",
     "preview": "node ./CI+CD/convertYaml.js; vite build; vite preview --host",
-    "code-check": "npx eslint --config ./.eslintrc.json ./src/ --ext .js,.vue"
+    "check": "npx eslint --config ./.eslintrc.json ./src/ --ext .js,.vue",
+    "format": "npx prettier --config ./.prettierrc.json -uw ./src/ ./public/configs/*.yml"
   },
   "eslintIgnore": [
     "stats.html"

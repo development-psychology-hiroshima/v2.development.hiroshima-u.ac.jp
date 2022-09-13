@@ -1,9 +1,12 @@
 # 「参加者募集」
+# title: 研究タイトル
+# url: 資料のリンク
+# downloadTitle - ファイルをダウンロードする際のファイル名
 projects:
   - title: 赤ちゃんの観察研究
-    url: https://development.hiroshima-u.ac.jp/ad/HARP2_ad.pdf
+    url: https://development.hiroshima-u.ac.jp/ad/HARP2_ver8.pdf
     downloadTitle: 赤ちゃんの観察研究
-    image: https://development.hiroshima-u.ac.jp/images/ad/HARP2_ad.jpg
+    image: https://development.hiroshima-u.ac.jp/images/ad/HARP2_ver8.jpg
 
 # HPのバックグラウンド画像。
 # lazyloadでは，より小さな画像を読み込むことで，
@@ -165,66 +168,66 @@ members:
     position: 博士課程後期1年
     image: https://development.hiroshima-u.ac.jp/images/people/saiga.JPG
     interest: 中年期のアイデンティティ，親子関係，発達心理学
-    teacher: 杉村和美
+    tutor: 杉村和美
   - name: 徐　煜
     position: 博士課程後期1年
     image: https://development.hiroshima-u.ac.jp/images/people/jo.jpg
     interest: アタッチメント階層性，インターネット依存，思春期
-    teacher: 梅村比丘
+    tutor: 梅村比丘
   - name: 東　智美
     position: 博士課程前期2年
     image: https://development.hiroshima-u.ac.jp/images/people/azuma.jpg
     interest: 愛着，親子関係，発達心理学
-    teacher: 梅村比丘
+    tutor: 梅村比丘
   - name: 上野　実希恵
     position: 博士課程前期2年
     image: https://development.hiroshima-u.ac.jp/images/people/Ueno.jpg
     interest: 発達心理学、臨床心理学、青年期、アイデンティティ
-    teacher: 杉村和美
+    tutor: 杉村和美
   - name: 繁田　京ノ輔
     position: 博士課程前期2年
     image: https://development.hiroshima-u.ac.jp/images/Handa.jpeg
     interest: 愛着，親子関係，アイデンティティ
-    teacher: 梅村比丘
+    tutor: 梅村比丘
   - name: 陳　朝鹿
     position: 博士課程前期1年
     image: https://development.hiroshima-u.ac.jp/images/people/chen.jpg
     interest: 機械学習と心理学の応用
-    teacher: 梅村比丘
+    tutor: 梅村比丘
   - name: 石崎　和也
     position: 博士課程前期1年
     image: https://development.hiroshima-u.ac.jp/images/people/isaizaki.jpg
     interest: アイデンティティ，青年期，対人関係，発達心理学
-    teacher: 杉村和美
+    tutor: 杉村和美
   - name: 廣　真琴
     position: 博士課程前期1年
     image: https://development.hiroshima-u.ac.jp/images/people/hiro.jpg
     interest: ジェンダーアイデンティティ、性別違和、質的研究
-    teacher: 杉村和美
+    tutor: 杉村和美
   - name: 安居　元紀
     position: 博士課程前期1年
     image: https://development.hiroshima-u.ac.jp/images/people/Yasui.jpg
     interest: アイデンティティ，青年期，マスターナラティブ
-    teacher: 杉村和美
+    tutor: 杉村和美
   - name: 高嶋　修平
     position: 学部4年
     image: https://development.hiroshima-u.ac.jp/images/people/takashima5.jpg
     interest: acculturation (文化変容)/アイデンティティ形成/留学・移民
-    teacher: 杉村和美
+    tutor: 杉村和美
   - name: 砂川　亜美
     position: 学部4年
     image: https://development.hiroshima-u.ac.jp/images/people/sunagawa3.jpg
     interest: アイデンティティ・ステイタス，発達心理学，社会心理学
-    teacher: 杉村和美
+    tutor: 杉村和美
   - name: 増田　百香
     position: 学部4年
     image: https://development.hiroshima-u.ac.jp/images/people/masuda3.jpg
     interest: 発達心理学，家族関係，きょうだい関係，愛着
-    teacher: 梅村比丘
+    tutor: 梅村比丘
 
 obogs:
   - name: 徳岡　大
-    position: 高松大学 講師(2020年度博士号取得)
+    position: 高松大学 講師（2020年度博士号取得）
     intro: 明るく前向きに，日々やる気のことについて考え，研究活動と教育活動にいそしんでおります。DARMという統計の勉強会も細々とやっているので，興味のある方は下記のホームページを覗いてみて下さい。現在，高松大学で助教やってます。
     interest: 動機づけ，達成目標理論，非社会的遊び，ベイズ推定
     others:
@@ -238,7 +241,7 @@ obogs:
     position: 宮崎産業経営大学 講師（2019年度博士課程後期満期退学）
     intro: 青年が重要な選択をえらぶときに悩んだ場合、どのように対処したらいいかを解 明していきたいです。特に進路決定の場面（就職活動での悩みや就活うつなど）にも興味があります。
     interest: 青年期以降のアイデンティティ形成，青年心理学，認知心理学，発達心理学
-  - name: 日原 尚吾
+  - name: 日原　尚吾
     position: 松山大学経営学部 准教授（2019年度博士号取得）
     image: https://development.hiroshima-u.ac.jp/images/people/Shougo_Hihara.jpg
     intro: なぜ青年は社会的に望ましくない生き方を自ら選びとることがあるのか，否定的アイデンティティという観点から研究しています。現在は，否定的アイデンティティに関する大規模縦断調査に取り組んでいます。人生を振り返る語り (self-narrative) のデータを用いた研究も少しずつ進めています。また，European Association for Research on Adolescenceが主催する若手研究者の会 The Student and Early Career Networkの委員 (日本代表) を務めています。
@@ -263,7 +266,7 @@ obogs:
       - title: 連絡先
         content: yasuhiroiwasa1357[at]gmail.com (atを@に変換してください)
   - name: 浅井　拓人
-    position: （2018年度博士課程前期修了生）
+    position: 2018年度博士課程前期修了生
     image: https://development.hiroshima-u.ac.jp/images/people/Takuto_Asai.JPG
     others:
       - title: 修士論文題目
