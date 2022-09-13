@@ -32,71 +32,79 @@ const controller = new AbortController();
  */
 const getConfig = async (configName, fallbackConfigName) => {
   /**
-   * @typedef {Object} project
-   * @property {String} title
-   * @property {String} url
-   * @property {String} image
-   * @property {String} downloadTitle - filename of the download
+   * @typedef {Object} project - 進行中（参加者募集中）のプロジェクト
+   * @property {String} title - 研究主題
+   * @property {String} url - 研究内容へのリンク
+   * @property {String} image - 研究内容を表すの画像
+   * @property {String} downloadTitle - ファイルをダウンロードする際のファイル名
    */
 
   /**
-   * @typedef {Object} backgrounds
-   * @property {String} lazyload
-   * @property {String} normal
+   * @typedef {Object} backgrounds - HPの背景画像
+   * @property {String} lazyload - lazyload機能を使う場合の画像（オプション）
+   * @property {String} normal - 背景画像
    */
 
   /**
-   * @typedef {Object} award
-   * @property {String} year
-   * @property {String} text
-   * @property {String} url
+   * @typedef {Object} award - イベントの情報
+   * @property {String} year - 年
+   * @property {String} text - 内容
+   * @property {String} url - 詳しい情報へのリンク（オプション）
    */
 
   /**
-   * @typedef {Object} graduate
-   * @property {String} year
-   * @property {String} undergrad
-   * @property {String} grad
+   * @typedef {Object} graduate - 毎年の卒業生
+   * @property {String} year - 卒業年度
+   * @property {String} undergrad - 学部生
+   * @property {String} grad - 院生
+   */
+
+  /**
+   * @typedef {Object} other - その他の情報
+   * @property {String} title - タイトル
+   * @property {String} content - 内容
    */
 
   /**
    * @typedef {Object} member
-   * @property {String} name
-   * @property {String} position
-   * @property {String} image
-   * @property {String} intro
-   * @property {String} interest
-   * @property {String} others
+   * @property {String} name - メンバー名
+   * @property {String} position - 役職（先生，学年）
+   * @property {String} image - メンバーの写真
+   * @property {String} intro - メンバーの紹介文（先生しか）
+   * @property {String} interest - 関心分野
+   * @property {Object.<other>} others - その他
+   * @property {String} tutor - 指導教員
    */
 
   /**
-   * @typedef {Object} obog
-   * @property {String} name
-   * @property {String} position
-   * @property {String} intro
-   * @property {String} interest
-   * @property {String} others
+   * @typedef {Object} obog - Old Boys/ Old Girls
+   * @property {String} name - メンバー名
+   * @property {String} position - 役職（先生，学年）
+   * @property {String} image - メンバーの写真
+   * @property {String} intro - メンバーの紹介文（先生しか）
+   * @property {Object} interest - 関心分野
+   * @property {String} others - その他
    */
 
   /**
-   * @typedef {Object} faculty
-   * @property {String} name
-   * @property {String} english
-   * @property {String} avatar
-   * @property {String} email
-   * @property {String} link
+   * @typedef {Object} faculty - 研究活動の執行主体
+   * @property {String} name - 主体の名前
+   * @property {String} english - 英語名
+   * @property {String} avatar - 画像
+   * @property {String} email - メールアドレス
+   * @property {String} link - ページへのリンク
    */
 
   /**
-   * @typedef {Object} menuItem
-   * @property {String} name
-   * @property {String} english
-   * @property {String} url
-   * @property {String} show
+   * @typedef {Object} menuItem - メニューの項目
+   * @property {String} name - 項目の名前
+   * @property {String} english - 項目の英語名
+   * @property {String} url - 項目のリンク
+   * @property {String} show - 項目を表示するかしないか
    */
 
   /**
-   * @namespace config
+   * @namespace config - 設定ファイル
    * @type {Object}
    * @property {Array.<project>} projects - 現在進行中の研究項目
    * @property {Object.<backgrounds>} backgrounds - 背景画像
