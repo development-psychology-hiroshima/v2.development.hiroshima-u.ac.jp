@@ -90,7 +90,6 @@ onBeforeUnmount(() => {
 <style scoped>
 #menu-pc,
 #menubar-mobile {
-  z-index: 999;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: box-shadow 0.375s ease-in-out;

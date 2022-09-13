@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import AwardTimeline from "./components/awardTimeline.vue";
+import MemberShowboxWrapper from "./components/memberShowboxWrapper.vue";
 import MenuBar from "./components/menuBar.vue";
 import ProjectShowcase from "./components/projectShowcase.vue";
 import ShowcaseWrapper from "./components/showcaseWrapper.vue";
@@ -84,14 +85,26 @@ getConfig("configs/main.yml", "configs/fallback/main.json")
           .mount("#container-researches");
         break;
       }
+      case "members": {
+        createApp(MemberShowboxWrapper)
+          .provide("members", config.members)
+          .provide("obogs", config.obogs)
+          .directive("lazyLoad", {
+            mounted: async (el, binding) => await lazyLoad(el, binding),
+          })
+          .mount("#app-mount-point");
+        break;
+      }
       default:
         break;
     }
 
     if ("index" !== currentPage) {
-      createApp(MenuBar)
-        .provide("menuItems", config.menuItems)
-        .mount("#menu-bar");
+      if (document.getElementById("menu-bar")) {
+        createApp(MenuBar)
+          .provide("menuItems", config.menuItems)
+          .mount("#menu-bar");
+      }
     }
   })
   .catch((e) => {

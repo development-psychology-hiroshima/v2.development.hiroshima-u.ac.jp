@@ -246,7 +246,7 @@ switch (params.type) {
 
 .preview-abstract {
   margin-top: 0.25rem;
-  color: #9a9a9a;
+  color: var(--color-set-gray);
   font-size: 1rem;
   text-align: justify;
 }
@@ -298,7 +298,7 @@ switch (params.type) {
   display: flex;
   flex: 1;
   align-items: center;
-  color: #9a9a9a;
+  color: var(--color-set-gray);
   font-weight: 400;
 }
 
@@ -309,7 +309,7 @@ switch (params.type) {
 }
 
 .avatar-email a {
-  color: #9a9a9a;
+  color: var(--color-set-gray);
 }
 
 a {

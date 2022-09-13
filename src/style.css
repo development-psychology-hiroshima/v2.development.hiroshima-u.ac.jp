@@ -1,6 +1,7 @@
 :root {
   --color-set-link: #0b08f2;
   --color-set-warning: #ffc107;
+  --color-set-gray: #8c8c8c;
   --trigo-param-positive: calc((0.6rem - 1px) / 1.414);
   --trigo-param-negative: calc((0.6rem - 1px) / -1.414);
 }
@@ -51,6 +52,7 @@ img#banner {
 #menu-bar {
   position: fixed;
   top: -1px;
+  z-index: 9999;
 }
 
 #content {

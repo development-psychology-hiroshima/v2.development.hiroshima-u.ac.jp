@@ -5,7 +5,7 @@ import DetailShowcase from "./detailShowcase.vue";
 const projects = inject("projects");
 
 // cyrb53 hashing function based on MurmurHash3,
-// credit to https://stackoverflow.com/a/52171480
+// credit to bryc on GitHub.
 function cyrb53(str, seed = 0) {
   let h1 = 0xdeadbeef ^ seed,
     h2 = 0x41c6ce57 ^ seed;

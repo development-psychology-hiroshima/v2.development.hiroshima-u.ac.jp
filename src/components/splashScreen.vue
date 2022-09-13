@@ -299,6 +299,8 @@ a {
 
   #splash-toc {
     grid-gap: unset;
+    grid-auto-rows: minmax(max-content, 4rem);
+    margin: auto;
     height: calc(100vh - 12rem);
     overflow-y: scroll;
   }
