@@ -185,6 +185,11 @@
     </div>
     <div id="container-researches"></div>
 
+    <div class="heading-container" id="title-members">
+      <h1>メンバー紹介</h1>
+    </div>
+    <div id="container-members"></div>
+
     <div class="heading-container" id="title-career-development">
       <h1>卒業生の進路</h1>
     </div>
@@ -194,13 +199,9 @@
   <style>
     html,
     body {
-      font-family: "Helvetica Neue", "Noto Sans JP", -apple-system,
-        BlinkMacSystemFont, system-ui, "Noto Serif JP", "Hiragino Sans",
-        "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック体, YuGothic,
-        "ヒラギノ角ゴ Pro W3", メイリオ, "Microsoft YaHei", sans-serif;
-      color: #000;
       background: #e8eded;
       overflow-x: hidden;
+      color: #000;
     }
 
     * {
@@ -209,9 +210,9 @@
     }
 
     #splash {
+      background-color: #fff;
       width: 100vw;
       height: 100vh;
-      background-color: #fff;
     }
 
     .heading-container {
@@ -220,38 +221,25 @@
       flex-wrap: nowrap;
       justify-content: center;
       align-items: center;
-      width: 100vw;
+      background-color: #fff;
       padding: 2rem 0;
-      background-color: #ffffff;
+      width: 100vw;
     }
 
     .heading-container > h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #ffffff;
-      background-color: #000000;
+      background-color: #000;
       padding: 0.25rem 1rem;
-    }
-
-    #container-introduction,
-    #container-researches,
-    #container-career-development {
-      padding-top: 2rem;
-      background-color: #e8eded;
-      width: 100vw;
-      display: flex;
-      flex-direction: row;
-      overflow-x: scroll;
-      justify-content: space-evenly;
-      align-items: flex-start;
+      color: #fff;
+      font-weight: 700;
+      font-size: 2rem;
     }
 
     #container-timeline {
+      display: flex;
+      align-items: center;
       background-color: #e8eded;
       width: 100vw;
       min-height: 70vh;
-      display: flex;
-      align-items: center;
       overflow: scroll;
       scrollbar-gutter: stable;
     }

@@ -55,6 +55,20 @@ img#banner {
   z-index: 9999;
 }
 
+#container-introduction,
+#container-researches,
+#container-career-development,
+#container-members {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  background-color: #e8eded;
+  padding-top: 2rem;
+  width: 100vw;
+  overflow-x: scroll;
+}
+
 #content {
   background-color: #fff;
   width: 75vw;
