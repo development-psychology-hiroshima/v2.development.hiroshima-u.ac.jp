@@ -10,7 +10,7 @@ function convertYaml(yamlPath, jsonPath) {
   const file = fs.readFileSync(yamlPath, "utf8");
 
   const data = jsyaml.load(file);
-  fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2));
+  fs.writeFileSync(jsonPath, JSON.stringify(data, null, 0));
 }
 
 const paths = [
