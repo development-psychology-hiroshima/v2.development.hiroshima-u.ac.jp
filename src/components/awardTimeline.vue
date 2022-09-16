@@ -119,12 +119,12 @@ const awards = inject("awards").reduce(timelineComposer);
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    #000 0%,
-    #000 30%,
-    #e8eded 30%,
-    #e8eded 51%,
-    #000 51%,
-    #000 100%
+    var(--color-text) 0%,
+    var(--color-text) 30%,
+    var(--color-background) 30%,
+    var(--color-background) 51%,
+    var(--color-text) 51%,
+    var(--color-text) 100%
   );
   width: 1rem;
   height: 1rem;
@@ -145,9 +145,9 @@ const awards = inject("awards").reduce(timelineComposer);
 }
 
 .timeline-year {
-  background-color: #000000;
+  background-color: var(--color-text);
   padding: 0.2em 0.5em;
-  color: #ffffff;
+  color: var(--color-background-lighter);
   font-weight: bold;
   font-size: 1.25rem;
   user-select: none;
@@ -176,7 +176,7 @@ const awards = inject("awards").reduce(timelineComposer);
     "menu";
   place-items: center;
   transition: all 0.125s ease-in-out;
-  background-color: #ffffff;
+  background-color: var(--color-background-lighter);
   padding: 0.5em;
   height: fit-content;
   overflow-wrap: anywhere;
@@ -198,10 +198,10 @@ const awards = inject("awards").reduce(timelineComposer);
 a {
   display: inline-block;
   grid-area: menu;
-  background-color: #000000;
+  background-color: var(--color-text);
   padding: 0.3rem 0.5rem;
   width: fit-content;
-  color: #ffffff;
+  color: var(--color-background-lighter);
   font-weight: 700;
   user-select: none;
   -webkit-user-select: none;
@@ -224,11 +224,11 @@ a {
 }
 
 .dialog-triangle.lower {
-  border-bottom: 0.5rem solid #ffffff;
+  border-bottom: 0.5rem solid var(--color-background-lighter);
 }
 
 .dialog-triangle.upper {
-  border-top: 0.5rem solid #ffffff;
+  border-top: 0.5rem solid var(--color-background-lighter);
 }
 
 .container-year,

@@ -1,7 +1,16 @@
 :root {
-  --color-set-link: #0b08f2;
-  --color-set-warning: #ffc107;
-  --color-set-gray: #8c8c8c;
+  --color-background: #e8eded;
+  --color-background-lighter: #fff;
+  --color-text: #000;
+  --color-text-lignter: #333;
+  --color-link: #0b08f2;
+  --color-warning: #ffc107;
+  --color-gray: #8c8c8c;
+  --color-tag-background: #f0f0f0;
+  --color-tag-text: #6b6b6b;
+  --color-barn-red: #730202;
+  --color-menu-transparent: #ffffffa1;
+  --color-menu-mobile: #fffffff2;
   --trigo-param-positive: calc((0.6rem - 1px) / 1.414);
   --trigo-param-negative: calc((0.6rem - 1px) / -1.414);
 }
@@ -10,7 +19,7 @@
   position: absolute;
   z-index: 999;
   box-shadow: 0 4px 6px 0 #00000012;
-  background: var(--color-set-warning, #fae0b5);
+  background: var(--color-warning);
   padding: 1rem 0;
   width: 100vw;
   user-select: none;
@@ -20,9 +29,9 @@
 
 html,
 body {
-  background-color: #e8eded;
+  background-color: var(--color-background);
   overflow-x: hidden;
-  color: #000;
+  color: var(--color-text);
   font-family: "Helvetica Neue", "Noto Sans JP", -apple-system,
     BlinkMacSystemFont, system-ui, "Noto Serif JP", "Hiragino Sans",
     "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック体, YuGothic,
@@ -63,14 +72,20 @@ img#banner {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: flex-start;
-  background-color: #e8eded;
+  background-color: var(--color-background);
   padding-top: 2rem;
   width: 100vw;
   overflow-x: scroll;
 }
 
+#container-members {
+  justify-content: flex-start;
+  padding-bottom: 1rem;
+  overflow-x: hidden;
+}
+
 #content {
-  background-color: #fff;
+  background-color: var(--color-background-lighter);
   width: 75vw;
   max-width: 1200px;
 }
@@ -120,19 +135,13 @@ html {
   counter-reset: section;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-}
-
 .details-html > p {
   margin-bottom: 1rem;
 }
 
 .details-html a,
 .content-text a {
-  color: var(--color-set-link, #6750a4);
+  color: var(--color-link);
 }
 
 .signature {
@@ -143,7 +152,7 @@ html {
   margin-bottom: 0.25rem;
 }
 
-h2:target {
+:is(h1, h2, h3):target {
   margin-top: -3rem;
   padding-top: 3rem;
 }

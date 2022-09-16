@@ -77,7 +77,7 @@ onBeforeUnmount(() => {
   align-content: flex-end;
   align-items: flex-end;
   box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+  background-color: var(--color-background-lighter);
   max-width: 50vw;
   max-height: 80vh;
   overflow-y: scroll;
@@ -91,7 +91,7 @@ onBeforeUnmount(() => {
   background-position: center;
   background-size: calc(100% - 1rem);
   background-repeat: no-repeat;
-  background-color: #730202;
+  background-color: var(--color-barn-red);
   width: 3rem;
   height: 3rem;
   content: "";

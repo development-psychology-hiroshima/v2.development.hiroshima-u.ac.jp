@@ -102,13 +102,16 @@ onBeforeUnmount(() => {
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  background: radial-gradient(#ffffffa1, #fff 2px);
+  background: radial-gradient(
+    var(--color-menu-transparent),
+    var(--color-background-lighter) 2px
+  );
   background-size: 4px 4px;
 }
 
 #menubar-mobile {
   display: none;
-  background-color: #fffffff2;
+  background-color: var(--color-menu-mobile);
 }
 
 .mobile-title {
@@ -131,7 +134,7 @@ onBeforeUnmount(() => {
 .menu-line {
   display: block;
   transition: all 0.375s ease-in-out;
-  background-color: #000;
+  background-color: var(--color-text);
   width: 1.5rem;
   height: 2px;
   user-select: none;
@@ -181,7 +184,6 @@ onBeforeUnmount(() => {
   z-index: -1;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background: #ffffffe6;
   padding: 1rem 0;
 }
 
@@ -193,12 +195,12 @@ a {
   font-weight: bold;
   font-size: 1.25rem;
   text-decoration: none;
-  text-shadow: 0 0 0.25rem #fff;
+  text-shadow: 0 0 0.25rem var(--color-background-lighter);
 }
 
 a:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--color-text);
+  color: var(--color-background-lighter);
   text-shadow: none;
 }
 

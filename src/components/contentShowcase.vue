@@ -182,8 +182,9 @@ switch (params.type) {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: stretch;
+  cursor: pointer;
   box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+  background-color: var(--color-background-lighter);
   max-width: 40rem;
   overflow: hidden;
 }
@@ -229,10 +230,10 @@ switch (params.type) {
   margin-top: 0.25rem;
   margin-right: 0.25rem;
   border-radius: 0.25rem;
-  background-color: #f0f0f0;
+  background-color: var(--color-tag-background);
   padding: 0 0.5rem 0 0.25rem;
   min-height: 1.5rem;
-  color: #6b6b6b;
+  color: var(--color-tag-text);
   font-weight: 700;
   font-size: 0.8rem;
   text-decoration: none;
@@ -246,7 +247,7 @@ switch (params.type) {
 
 .preview-abstract {
   margin-top: 0.25rem;
-  color: var(--color-set-gray);
+  color: var(--color-gray);
   font-size: 1rem;
   text-align: justify;
 }
@@ -254,13 +255,13 @@ switch (params.type) {
 .preview-abstract::after {
   cursor: pointer;
   content: "もっと見る";
-  color: var(--color-set-link, #6750a4);
+  color: var(--color-link);
 }
 
 .container-avatar-preview {
   display: flex;
   box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+  background-color: var(--color-background-lighter);
   padding-right: 1rem;
   min-width: clamp(20rem, 30vw, 30rem);
   max-width: min(100vw, 30rem);
@@ -282,7 +283,7 @@ switch (params.type) {
 .avatar-name {
   margin-top: 1rem;
   margin-bottom: 0.25rem;
-  color: #000000;
+  color: var(--color-text);
   font-weight: 700;
   font-size: 1.5rem;
   font-family: "Noto Serif JP", -apple-system, BlinkMacSystemFont, system-ui,
@@ -290,7 +291,7 @@ switch (params.type) {
 }
 
 .avatar-english-name {
-  color: #000000;
+  color: var(--color-text);
   text-transform: uppercase;
 }
 
@@ -298,7 +299,7 @@ switch (params.type) {
   display: flex;
   flex: 1;
   align-items: center;
-  color: var(--color-set-gray);
+  color: var(--color-gray);
   font-weight: 400;
 }
 
@@ -309,7 +310,7 @@ switch (params.type) {
 }
 
 .avatar-email a {
-  color: var(--color-set-gray);
+  color: var(--color-gray);
 }
 
 a {
