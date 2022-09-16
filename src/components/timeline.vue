@@ -1,19 +1,19 @@
 <script setup>
 import { inject } from "vue";
 
-const timelineComposer = (prev, curr) => {
+const awardTimelineComposer = (prev, curr) => {
   // transform object to array, enables expansion operation
   const previous = Array.isArray(prev) ? prev : [].concat(prev);
   const previousAward = previous.pop();
   if (previousAward.year !== curr.year) {
-    if ("awards" in previousAward) {
+    if ("contents" in previousAward) {
       return [...previous, previousAward, curr];
     } else {
       return [
         ...previous,
         {
           year: previousAward.year,
-          awards: [
+          contents: [
             {
               text: previousAward.text,
               url: previousAward.url,
@@ -24,13 +24,13 @@ const timelineComposer = (prev, curr) => {
       ];
     }
   } else {
-    if ("awards" in previousAward) {
+    if ("contents" in previousAward) {
       return [
         ...previous,
         {
           year: previousAward.year,
-          awards: [
-            ...previousAward.awards,
+          contents: [
+            ...previousAward.contents,
             {
               text: curr.text,
               url: curr.url,
@@ -43,7 +43,7 @@ const timelineComposer = (prev, curr) => {
         ...previous,
         {
           year: previousAward.year,
-          awards: [
+          contents: [
             {
               text: previousAward.text,
               url: previousAward.url,
@@ -59,22 +59,45 @@ const timelineComposer = (prev, curr) => {
   }
 };
 
-const awards = inject("awards").reduce(timelineComposer);
+const showType = inject("showType");
+
+/* eslint-disable indent */
+const contents =
+  "award" === showType
+    ? inject("awards").reduce(awardTimelineComposer)
+    : inject("career").map((item) => {
+        const { year, undergrad, grad } = item;
+        const contents = [];
+        for (const text of [undergrad, grad]) {
+          if (text) {
+            contents.push({
+              text,
+              url: "",
+            });
+          }
+        }
+
+        return {
+          year: year,
+          contents: contents,
+        };
+      });
+/* eslint-enable indent */
 </script>
 
 <template>
   <div id="timeline">
     <div
-      v-for="(awardsByYear, index) in awards"
+      v-for="(contentsByYear, index) in contents"
       class="timeline-by-year-container"
       :key="index"
     >
       <div class="container-year">
-        <div class="timeline-year">{{ awardsByYear.year }}</div>
+        <div class="timeline-year">{{ contentsByYear.year }}</div>
         <div class="dialog-triangle year"></div>
       </div>
       <div
-        v-for="(award, index) in awardsByYear.awards"
+        v-for="(award, index) in contentsByYear.contents"
         class="container-card"
         :class="0 === index % 2 ? 'upper' : 'lower'"
         :key="index"

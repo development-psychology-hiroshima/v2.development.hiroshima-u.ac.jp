@@ -78,6 +78,12 @@ img#banner {
   overflow-x: scroll;
 }
 
+#container-career-development {
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 20rem;
+}
+
 #container-members {
   justify-content: flex-start;
   padding-bottom: 1rem;
@@ -163,6 +169,10 @@ mark {
   text-decoration: underline 2px wavy;
 }
 
+#content .content-text {
+  box-shadow: 0 4px 6px 0 #00000012;
+}
+
 .content-text > h3 {
   counter-increment: section;
 }
@@ -197,4 +207,17 @@ mark {
 
 .details-html img {
   max-width: 100%;
+}
+
+footer {
+  background-color: var(--color-background-lighter);
+  padding: 1.5rem;
+  width: 100vw;
+  /*box-shadow: 0 -0.1rem 0.25rem 0 #0000000f;*/
+  color: var(--color-gray);
+  text-align: center;
+}
+
+footer p:not(:last-child) {
+  margin-bottom: 0.5rem;
 }

@@ -1,11 +1,11 @@
 import { createApp } from "vue";
-import AwardTimeline from "./components/awardTimeline.vue";
 import HomepageMemberShowbox from "./components/homepageMemberShowbox.vue";
 import MemberShowboxWrapper from "./components/memberShowboxWrapper.vue";
 import MenuBar from "./components/menuBar.vue";
 import ProjectShowcase from "./components/projectShowcase.vue";
 import ShowcaseWrapper from "./components/showcaseWrapper.vue";
 import SplashScreen from "./components/splashScreen.vue";
+import Timeline from "./components/timeline.vue";
 import { useRegisterSW } from "virtual:pwa-register/vue";
 import "./style.css";
 import { getConfig } from "./utils.js";
@@ -87,8 +87,9 @@ getConfig("configs/main.yml", "configs/fallback/main.json")
           .provide("projects", config.projects)
           .provide("hashingFunction", cyrb53)
           .mount("#project-showcase");
-        createApp(AwardTimeline)
+        createApp(Timeline)
           .provide("awards", config.awards)
+          .provide("showType", "award")
           .mount("#container-timeline");
         const welcomeHtml = (document.getElementById("welcome-message") || "")
           .innerHTML;
@@ -117,6 +118,10 @@ getConfig("configs/main.yml", "configs/fallback/main.json")
             mounted: async (el, binding) => await lazyLoad(el, binding),
           })
           .mount("#container-members");
+        createApp(Timeline)
+          .provide("showType", "career")
+          .provide("career", config.graduates)
+          .mount("#container-career-development");
         break;
       }
       case "members": {
@@ -140,6 +145,11 @@ getConfig("configs/main.yml", "configs/fallback/main.json")
           .provide("menuItems", config.menuItems)
           .mount("#menu-bar");
       }
+    }
+
+    const element = document.getElementById("copyright-year");
+    if (element) {
+      element.innerHTML = new Date().getFullYear().toString();
     }
   })
   .catch((e) => {
