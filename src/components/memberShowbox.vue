@@ -1,4 +1,6 @@
 <script setup>
+import { inject } from "vue";
+
 defineProps({
   member: {
     type: Object,
@@ -15,15 +17,23 @@ defineProps({
   },
 });
 
-function normalizeName(name) {
-  return name.replace(/\s+/g, " ");
+const cyrb53 = inject("hashingFunction");
+
+function normalizeName(name, replacementString = " ") {
+  return name.replace(/\s+/g, replacementString);
+}
+
+function getMemberNameHashId(name) {
+  return "member-" + cyrb53(normalizeName(name, ""));
 }
 </script>
 
 <template>
   <div class="member-showbox">
-    <div class="title-wrapper">
-      <h3>{{ normalizeName(member.name) }}</h3>
+    <div class="title-wrapper" :id="getMemberNameHashId(member.name)">
+      <h3>
+        {{ normalizeName(member.name) }}
+      </h3>
       <p class="position">{{ member.position }}</p>
     </div>
     <img
@@ -85,7 +95,7 @@ h3 {
 
 .position {
   margin-left: 0.75rem;
-  color: var(--color-set-gray);
+  color: var(--color-gray);
   font-weight: 500;
 }
 
