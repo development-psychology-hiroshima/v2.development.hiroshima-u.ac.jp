@@ -47,7 +47,7 @@ const paths = [
 paths.forEach(({ yamlPath, jsonPath }) => {
   try {
     convertYaml(yamlPath, jsonPath);
-    console.log(`In:  ${yamlPath} \nOut: ${jsonPath}\x1b[33m Success\x1b[0m\n`);
+    console.log(`Create fallback JSON:\nIn:  ${yamlPath} \nOut: ${jsonPath}\x1b[33m Success\x1b[0m\n`);
   } catch (e) {
     console.error(`\x1b[31m${e}\x1b[0m`);
   }

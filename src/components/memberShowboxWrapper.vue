@@ -26,6 +26,7 @@ h2 {
 h2::after {
   display: block;
   backdrop-filter: invert(1);
+  -webkit-backdrop-filter: invert(1);
   margin-top: -0.8rem;
   background: transparent;
   width: 100%;
