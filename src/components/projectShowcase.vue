@@ -86,7 +86,7 @@ function closeOnce() {
   justify-items: stretch;
   z-index: 9999;
   margin: auto;
-  background: var(--color-text-lignter);
+  background: var(--color-text-lighter);
   padding: 1.5rem 1rem;
   min-width: min(30rem, 100vw);
   color: var(--color-background-lighter);
@@ -109,7 +109,7 @@ function closeOnce() {
 
 .recommend {
   background: var(--color-background-lighter);
-  color: var(--color-text-lignter);
+  color: var(--color-text-lighter);
   font-weight: 700;
 }
 

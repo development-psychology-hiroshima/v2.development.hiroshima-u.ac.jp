@@ -122,8 +122,8 @@ const contents =
     0deg,
     transparent 0%,
     transparent 49%,
-    #000 49%,
-    #000 51%,
+    var(--color-text, #000) 49%,
+    var(--color-text, #000) 51%,
     transparent 51%,
     transparent 100%
   );
@@ -216,6 +216,7 @@ const contents =
   overflow: hidden;
   text-align: justify;
   text-overflow: ellipsis;
+  color: var(--color-text);
 }
 
 a {
@@ -243,15 +244,18 @@ a {
 }
 
 .dialog-triangle.year {
-  border-top: 0.5rem solid #000000;
+  border-top: 0.5rem solid var(--color-text);
+  transform: translate3d(0, -1px, 0);
 }
 
 .dialog-triangle.lower {
   border-bottom: 0.5rem solid var(--color-background-lighter);
+  transform: translate3d(0, 1px, 0);
 }
 
 .dialog-triangle.upper {
   border-top: 0.5rem solid var(--color-background-lighter);
+  transform: translate3d(0, -1px, 0);
 }
 
 .container-year,
