@@ -174,6 +174,7 @@ const contents =
   font-weight: bold;
   font-size: 1.25rem;
   user-select: none;
+  white-space: nowrap;
 }
 
 .timeline-by-year-container {
