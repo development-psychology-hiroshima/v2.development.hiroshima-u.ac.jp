@@ -88,7 +88,7 @@ img {
 }
 
 h3 {
-  border-left: 0.5rem solid #000;
+  border-left: 0.5rem solid var(--color-text);
   padding-left: 0.5rem;
   font-size: 1.5rem;
 }

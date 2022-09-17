@@ -17,13 +17,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #13141B;
-    --color-background-lighter: #21232F;
-    --color-text: #d9d9d9;
+    --color-background: #13141b;
+    --color-background-lighter: #23272d;
+    --color-text: #ccc;
     --color-text-lighter: #e6e6e6;
-    --color-link: #8ab4f7;
-    --color-tag-background: #2a2a2a;
-    --color-tag-text: #8c8c8c;
+    --color-link: #539bf5;
+    --color-tag-background: #383838;
+    --color-tag-text: #b3b3b3;
     --color-menu-transparent: #666666a1;
     --color-menu-mobile: #474747f2;
   }
@@ -32,7 +32,10 @@
     -webkit-filter: brightness(0.7);
   }
   .heading-container > h1 {
-    background-color: var(--color-text) !important;
+    background-color: unset !important;
+    text-decoration: underline 0.25rem solid var(--color-text);
+    text-underline-offset: 0.5rem;
+    color: var(--color-text) !important;
   }
 }
 
@@ -241,13 +244,13 @@ mark {
   flex-direction: column;
   justify-content: center;
   transition: all 0.375s ease-in-out;
-  box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 0.5rem 0 #00000019;
   background-color: var(--color-background-lighter);
   padding: 2rem;
 }
 
 #contact-content:hover {
-  box-shadow: 4px 4px 1rem 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 1rem 0 #00000033;
 }
 
 #contact-content a {

@@ -139,7 +139,7 @@ const root = h(
   align-items: center;
   transition: all 0.375s ease-in-out;
   margin-left: 1rem;
-  box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 0.5rem 0 #00000019;
   background-color: var(--color-background-lighter);
   min-width: 20rem;
   color: var(--color-text);
@@ -150,7 +150,7 @@ const root = h(
 }
 
 .homepage-member-showcase:hover {
-  box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 0.5rem 0 #00000033;
 }
 
 .homepage-member-image {

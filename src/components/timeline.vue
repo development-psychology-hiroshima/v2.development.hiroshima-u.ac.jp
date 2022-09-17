@@ -183,7 +183,7 @@ const contents =
 }
 
 .container-card {
-  filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 0 0.5rem #00000019);
   margin: 0 0.5rem;
   width: 13rem;
 }

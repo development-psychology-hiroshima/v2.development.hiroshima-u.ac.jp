@@ -148,7 +148,7 @@ switch (params.type) {
 }
 
 :is(.container-showcase-preview, .container-avatar-preview):hover {
-  box-shadow: 4px 4px 1rem 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 1rem 0 #00000033;
 }
 
 .content-fade-enter-active,
@@ -183,7 +183,7 @@ switch (params.type) {
   justify-content: flex-start;
   align-items: stretch;
   cursor: pointer;
-  box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 0.5rem 0 #00000019;
   background-color: var(--color-background-lighter);
   max-width: 40rem;
   overflow: hidden;
@@ -260,7 +260,7 @@ switch (params.type) {
 
 .container-avatar-preview {
   display: flex;
-  box-shadow: 2px 2px 0.5rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 0.5rem 0 #00000019;
   background-color: var(--color-background-lighter);
   padding-right: 1rem;
   min-width: clamp(20rem, 30vw, 30rem);
