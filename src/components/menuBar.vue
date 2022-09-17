@@ -191,7 +191,7 @@ a {
   transition: all 0.175s ease-in-out;
   margin: 0 0.5rem;
   padding: 0.2rem 0.5rem;
-  color: #000;
+  color: var(--color-text);
   font-weight: bold;
   font-size: 1.25rem;
   text-decoration: none;
