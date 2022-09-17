@@ -352,8 +352,8 @@ a {
 
 @media (prefers-color-scheme: dark) {
   #mask-underlay {
-    background-color: #00000080;
     opacity: 0.5;
+    background-color: #00000080;
   }
 }
 

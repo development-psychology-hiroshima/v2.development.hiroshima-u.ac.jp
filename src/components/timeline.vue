@@ -214,9 +214,9 @@ const contents =
   transition: all 0.125s ease-in-out;
   height: fit-content;
   overflow: hidden;
+  color: var(--color-text);
   text-align: justify;
   text-overflow: ellipsis;
-  color: var(--color-text);
 }
 
 a {
@@ -244,18 +244,18 @@ a {
 }
 
 .dialog-triangle.year {
-  border-top: 0.5rem solid var(--color-text);
   transform: translate3d(0, -1px, 0);
+  border-top: 0.5rem solid var(--color-text);
 }
 
 .dialog-triangle.lower {
-  border-bottom: 0.5rem solid var(--color-background-lighter);
   transform: translate3d(0, 1px, 0);
+  border-bottom: 0.5rem solid var(--color-background-lighter);
 }
 
 .dialog-triangle.upper {
-  border-top: 0.5rem solid var(--color-background-lighter);
   transform: translate3d(0, -1px, 0);
+  border-top: 0.5rem solid var(--color-background-lighter);
 }
 
 .container-year,
