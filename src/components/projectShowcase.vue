@@ -66,7 +66,7 @@ function closeOnce() {
   </transition>
   <transition name="detail-viewer">
     <detail-showcase
-      v-show="showDetail"
+      v-if="showDetail"
       :config="displayContents"
       @sigClose="handleSigClose"
     />
