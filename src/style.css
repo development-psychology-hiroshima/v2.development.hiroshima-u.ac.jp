@@ -33,9 +33,9 @@
   }
   .heading-container > h1 {
     background-color: unset !important;
+    color: var(--color-text) !important;
     text-decoration: underline 0.25rem solid var(--color-text);
     text-underline-offset: 0.5rem;
-    color: var(--color-text) !important;
   }
 }
 
