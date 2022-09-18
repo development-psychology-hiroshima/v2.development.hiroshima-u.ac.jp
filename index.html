@@ -55,7 +55,15 @@
         >でアクセスするか、 ブラウザ設定でJavaScriptを有効にしてご利用ください。
       </p>
     </noscript>
-    <!--  Photo by Alfons Morales on Unsplash-->
+
+    <div id="loading">
+      <span class="loader"></span>
+      <h2 id="loading-text">
+        LOADING<span id="load1">.</span><span id="load2">.</span
+        ><span id="load3">.</span>
+      </h2>
+    </div>
+
     <div id="splash"></div>
 
     <div id="project-showcase"></div>
@@ -199,17 +207,13 @@
       <h1>お問合せ</h1>
     </div>
     <div id="container-contact">
-        <div id="contact-content">
-          <p>
-            学内外より広くゼミ生募集中です！
-          </p>
-          <p>
-            ご興味のある方は，梅村までご連絡ください。
-          </p>
-            <a href="mailto:umemura@hiroshima-u.ac.jp" target="_blank"
-              >梅村まで連絡する
-            </a>
-        </div>
+      <div id="contact-content">
+        <p>学内外より広くゼミ生募集中です！</p>
+        <p>ご興味のある方は，梅村までご連絡ください。</p>
+        <a href="mailto:umemura@hiroshima-u.ac.jp" target="_blank"
+          >梅村まで連絡する
+        </a>
+      </div>
     </div>
 
     <footer>
@@ -226,18 +230,30 @@
       overflow-x: hidden;
       color: var(--color-text, #000);
     }
-
     * {
       margin: 0;
       padding: 0;
     }
-
     #splash {
       background-color: var(--color-background-lighter, #fff);
       width: 100vw;
       height: 100vh;
     }
-
+    #loading {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      background-color: var(--color-background-lighter, #fff);
+      width: 100vw;
+      height: 100vh;
+      color: var(--color-text, #000);
+      overscroll-behavior-y: contain;
+    }
     .heading-container {
       display: flex;
       flex-direction: column;
@@ -248,7 +264,6 @@
       padding: 2rem 0;
       width: 100vw;
     }
-
     .heading-container > h1 {
       background-color: var(--color-text, #000);
       padding: 0.25rem 1rem;
@@ -256,7 +271,6 @@
       font-weight: 700;
       font-size: 2rem;
     }
-
     #container-timeline {
       display: flex;
       align-items: center;
@@ -266,12 +280,10 @@
       overflow: scroll;
       scrollbar-gutter: stable;
     }
-
     @media screen and (max-width: 768px) {
       .heading-container > h1 {
         font-size: 1.5rem;
       }
-
       #container-introduction,
       #container-researches {
         flex-direction: column;

@@ -5,6 +5,7 @@ import MenuBar from "./components/menuBar.vue";
 import ProjectShowcase from "./components/projectShowcase.vue";
 import ShowcaseWrapper from "./components/showcaseWrapper.vue";
 import SplashScreen from "./components/splashScreen.vue";
+import StudentResearchWrapper from "./components/studentResearchWrapper.vue";
 import Timeline from "./components/timeline.vue";
 import { useRegisterSW } from "virtual:pwa-register/vue";
 import "./style.css";
@@ -75,10 +76,17 @@ function cyrb53(str, seed = 0) {
   return longHash.toString(16);
 }
 
-getConfig("configs/main.yml", "configs/fallback/main.json")
-  .then((config) => {
-    switch (currentPage) {
-      case "index": {
+function removeLoadingScreen() {
+  const loadingElement = document.getElementById("loading");
+  if (loadingElement) {
+    loadingElement.remove();
+  }
+}
+
+switch (currentPage) {
+  case "index": {
+    getConfig("configs/main.yml", "configs/fallback/main.json")
+      .then((config) => {
         createApp(SplashScreen)
           .provide("menuItems", config.menuItems)
           .provide("backgrounds", config.backgrounds)
@@ -122,9 +130,16 @@ getConfig("configs/main.yml", "configs/fallback/main.json")
           .provide("showType", "career")
           .provide("career", config.graduates)
           .mount("#container-career-development");
-        break;
-      }
-      case "members": {
+        removeLoadingScreen();
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+    break;
+  }
+  case "members": {
+    getConfig("configs/main.yml", "configs/fallback/main.json")
+      .then((config) => {
         createApp(MemberShowboxWrapper)
           .provide("members", config.members)
           .provide("obogs", config.obogs)
@@ -133,27 +148,52 @@ getConfig("configs/main.yml", "configs/fallback/main.json")
             mounted: async (el, binding) => await lazyLoad(el, binding),
           })
           .mount("#app-mount-point");
-        break;
-      }
-      default:
-        break;
-    }
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+    removeLoadingScreen();
+    break;
+  }
+  case "research_students": {
+    getConfig(
+      "configs/membersResearch.yml",
+      "configs/fallback/membersResearch.json"
+    )
+      .then((config) => {
+        createApp(StudentResearchWrapper)
+          .provide("members", config.members)
+          .provide("hashingFunction", cyrb53)
+          .directive("lazyLoad", {
+            mounted: async (el, binding) => await lazyLoad(el, binding),
+          })
+          .mount("#app-mount-point");
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+    removeLoadingScreen();
+    break;
+  }
+}
 
-    if ("index" !== currentPage) {
-      if (document.getElementById("menu-bar")) {
+if ("index" !== currentPage) {
+  if (document.getElementById("menu-bar")) {
+    getConfig("configs/main.yml", "configs/fallback/main.json")
+      .then((config) => {
         createApp(MenuBar)
           .provide("menuItems", config.menuItems)
           .mount("#menu-bar");
-      }
-    }
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+  }
+}
 
-    const element = document.getElementById("copyright-year");
-    if (element) {
-      element.innerHTML = new Date().getFullYear().toString();
-    }
-  })
-  .catch((e) => {
-    console.error(e);
-  });
+const element = document.getElementById("copyright-year");
+if (element) {
+  element.innerHTML = new Date().getFullYear().toString();
+}
 
 export { getCurrentPage };

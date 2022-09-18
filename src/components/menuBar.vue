@@ -184,6 +184,7 @@ onBeforeUnmount(() => {
   z-index: -1;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  background: var(--color-menu-mobile-background);
   padding: 1rem 0;
 }
 

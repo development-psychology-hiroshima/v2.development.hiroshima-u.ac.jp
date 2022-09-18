@@ -84,12 +84,12 @@ function closeOnce() {
     "button-close button-view";
   align-items: center;
   justify-items: stretch;
-  z-index: 9999;
+  z-index: 9;
   margin: auto;
-  background: var(--color-text-lighter);
+  background: #333;
   padding: 1.5rem 1rem;
   min-width: min(30rem, 100vw);
-  color: var(--color-background-lighter);
+  color: #fff;
 }
 
 .content {
@@ -109,7 +109,7 @@ function closeOnce() {
 
 .recommend {
   background: var(--color-background-lighter);
-  color: var(--color-text-lighter);
+  color: var(--color-text);
   font-weight: 700;
 }
 

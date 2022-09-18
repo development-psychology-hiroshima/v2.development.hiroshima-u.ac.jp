@@ -56,9 +56,19 @@
       </p>
     </noscript>
 
+    <div id="loading">
+      <span class="loader"></span>
+      <h2 id="loading-text">
+        LOADING<span id="load1">.</span><span id="load2">.</span
+      ><span id="load3">.</span>
+      </h2>
+    </div>
+
     <div id="menu-bar"></div>
     <div id="content">
-      <div class="content-text"></div>
+      <div class="content-text">
+        <div id="app-mount-point"></div>
+      </div>
     </div>
 
     <footer>
@@ -70,14 +80,16 @@
     <script type="module" src="/src/main.js"></script>
   </body>
   <style>
+    #content {
+      padding-top: 3rem;
+    }
+    #app-mount-point {
+      display: contents;
+    }
     .content-text {
       display: flex;
       flex-direction: column;
       padding: 2rem 4rem;
-    }
-
-    p:not(li > p) {
-      margin-bottom: 1rem;
     }
   </style>
 </html>
