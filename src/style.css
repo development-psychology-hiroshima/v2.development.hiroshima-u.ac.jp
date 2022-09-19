@@ -390,6 +390,61 @@ mark {
   }
 }
 
+.schedule-month {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem !important;
+}
+
+.schedule-month span {
+  margin-right: 0.1rem;
+  font-size: 1.6rem;
+}
+
+.schedule-month::before {
+  display: inline-block;
+  margin-right: 0.5rem;
+  background-color: var(--color-coquelicot);
+  width: 1rem;
+  height: 1rem;
+  content: "";
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.introduction-image {
+  position: relative;
+  margin: 1rem 0 0.5rem 0;
+}
+
+figcaption {
+  color: var(--color-gray);
+}
+
+.container-footnotes {
+  margin-top: 2rem;
+  border-top: 0.1rem dashed var(--color-gray);
+  padding: 0.25rem 0;
+  width: 100%;
+}
+
+.footnote {
+  margin-bottom: 0.5rem;
+  color: var(--color-gray);
+}
+
+.footnote::before {
+  vertical-align: baseline;
+  content: "\e88e";
+  font-size: 0.8rem;
+  font-family: "Material Icons", serif;
+}
+
 footer {
   background-color: var(--color-background-lighter);
   padding: 1.5rem;

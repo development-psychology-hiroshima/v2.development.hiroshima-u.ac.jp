@@ -76,12 +76,12 @@ function cyrb53(str, seed = 0) {
   return longHash.toString(16);
 }
 
-function removeLoadingScreen(timeout = 0) {
+function removeLoadingScreen(timoutMilliseconds = 0) {
   const loadingElement = document.getElementById("loading");
   if (loadingElement) {
     setTimeout(() => {
       loadingElement.remove();
-    }, timeout);
+    }, timoutMilliseconds);
   }
 }
 
