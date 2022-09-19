@@ -9,6 +9,7 @@
   --color-tag-background: #f0f0f0;
   --color-tag-text: #6b6b6b;
   --color-barn-red: #730202;
+  --color-coquelicot: #ff3d00;
   --color-menu-transparent: #ffffffa1;
   --color-menu-mobile: #fffffff2;
   --color-menu-mobile-background: #ffffffe6;
@@ -112,13 +113,7 @@ body {
   left: 0;
   animation: colorBallMoveX 1.5s linear infinite alternate;
   border-radius: 50%;
-  background: linear-gradient(
-      to right,
-      var(--color-background-lighter) 50%,
-      var(--color-text) 50%
-    )
-    100% 0 no-repeat;
-  background-size: 200% auto;
+  background-color: var(--color-text);
   width: 48px;
   height: 48px;
   content: "";
@@ -129,52 +124,54 @@ body {
   top: 0;
   left: 50%;
   transform: translate3d(calc(-50% - 1px), 0, 0);
-  background: #ff3d00;
-  width: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-background-lighter) 49%,
+    var(--color-coquelicot) 49%,
+    var(--color-coquelicot) 51%,
+    transparent 51%
+  );
+  width: 100%;
   height: 100%;
   content: "";
 }
 
 @keyframes colorBallMoveX {
-  0% {
-    transform: translate3d(-15px, -50%, 0);
-    background-position: 0 0;
+  0%,
+  5% {
+    transform: translate3d(0, -50%, 0);
   }
   15%,
   25% {
-    transform: translate3d(0px, -50%, 0);
-    background-position: 0 0;
+    transform: translate3d(0, -50%, 0);
   }
   75%,
   85% {
     transform: translate3d(50px, -50%, 0);
-    background-position: 100% 0;
   }
   95%,
   100% {
     transform: translate3d(65px, -50%, 0);
-    background-position: 100% 0;
   }
 }
 
-#load1 {
+.load {
   position: absolute;
-  transform: translate3d(0rem, 0, 0);
   animation: show 1s steps(2) infinite;
+}
+
+.dot1 {
+  transform: translate3d(0rem, 0, 0);
   animation-delay: 0s;
 }
 
-#load2 {
-  position: absolute;
+.dot2 {
   transform: translate3d(0.5rem, 0, 0);
-  animation: show 1s steps(2) infinite;
   animation-delay: 0.25s;
 }
 
-#load3 {
-  position: absolute;
+.dot3 {
   transform: translate3d(1rem, 0, 0);
-  animation: show 1s steps(2) infinite;
   animation-delay: 0.5s;
 }
 
