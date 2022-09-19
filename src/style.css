@@ -306,7 +306,7 @@ html {
 
 mark {
   background: none;
-  color: #000;
+  color: var(--color-text);
   text-decoration: underline 2px wavy;
 }
 
