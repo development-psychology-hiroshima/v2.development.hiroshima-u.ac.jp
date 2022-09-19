@@ -22,15 +22,4 @@ h2 {
   width: fit-content;
   font-size: 1.5rem;
 }
-
-h2::after {
-  display: block;
-  backdrop-filter: invert(1);
-  -webkit-backdrop-filter: invert(1);
-  margin-top: -0.8rem;
-  background: transparent;
-  width: 100%;
-  height: 0.5rem;
-  content: "";
-}
 </style>

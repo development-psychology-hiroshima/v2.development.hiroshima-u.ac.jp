@@ -88,9 +88,17 @@ img {
 }
 
 h3 {
-  border-left: 0.5rem solid var(--color-text);
-  padding-left: 0.5rem;
+  padding-left: -1.5rem;
   font-size: 1.5rem;
+}
+
+h3::before {
+  display: inline-block;
+  margin-right: 0.5rem;
+  background-color: var(--color-coquelicot);
+  width: 1rem;
+  height: 1rem;
+  content: "";
 }
 
 .position {

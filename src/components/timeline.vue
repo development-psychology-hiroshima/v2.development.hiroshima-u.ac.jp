@@ -168,7 +168,7 @@ const contents =
 }
 
 .timeline-year {
-  background-color: var(--color-text);
+  background-color: var(--color-coquelicot);
   padding: 0.2em 0.5em;
   color: var(--color-background-lighter);
   font-weight: bold;
@@ -246,7 +246,7 @@ a {
 
 .dialog-triangle.year {
   transform: translate3d(0, -1px, 0);
-  border-top: 0.5rem solid var(--color-text);
+  border-top: 0.5rem solid var(--color-coquelicot);
 }
 
 .dialog-triangle.lower {

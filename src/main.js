@@ -76,10 +76,12 @@ function cyrb53(str, seed = 0) {
   return longHash.toString(16);
 }
 
-function removeLoadingScreen() {
+function removeLoadingScreen(timeout = 0) {
   const loadingElement = document.getElementById("loading");
   if (loadingElement) {
-    loadingElement.remove();
+    setTimeout(() => {
+      loadingElement.remove();
+    }, timeout);
   }
 }
 
@@ -130,7 +132,6 @@ switch (currentPage) {
           .provide("showType", "career")
           .provide("career", config.graduates)
           .mount("#container-career-development");
-        removeLoadingScreen();
       })
       .catch((e) => {
         console.error(e);
@@ -152,7 +153,6 @@ switch (currentPage) {
       .catch((e) => {
         console.error(e);
       });
-    removeLoadingScreen();
     break;
   }
   case "research_students": {
@@ -162,8 +162,7 @@ switch (currentPage) {
     )
       .then((config) => {
         createApp(StudentResearchWrapper)
-          .provide("members", config.members)
-          .provide("hashingFunction", cyrb53)
+          .provide("researches", config)
           .directive("lazyLoad", {
             mounted: async (el, binding) => await lazyLoad(el, binding),
           })
@@ -172,10 +171,11 @@ switch (currentPage) {
       .catch((e) => {
         console.error(e);
       });
-    removeLoadingScreen();
     break;
   }
 }
+
+removeLoadingScreen(0);
 
 if ("index" !== currentPage) {
   if (document.getElementById("menu-bar")) {

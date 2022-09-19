@@ -104,6 +104,30 @@ const getConfig = async (configName, fallbackConfigName) => {
    */
 
   /**
+   * @typedef {Object} paper
+   * @property {String} title - 論文のタイトル
+   * @property {String} url
+   */
+
+  /**
+   * @typedef {Array} affiliate
+   * @property {String} name
+   * @property {Array.<paper>} papers
+   */
+
+  /**
+   * @typedef {Array.<paper>} bachelor
+   */
+
+  /**
+   * @typedef {Array.<paper>} master
+   */
+
+  /**
+   * @typedef {Array.<paper>} doctor
+   */
+
+  /**
    * @namespace config - 設定ファイル
    * @type {Object}
    * @property {Array.<project>} projects - 現在進行中の研究項目
@@ -114,7 +138,12 @@ const getConfig = async (configName, fallbackConfigName) => {
    * @property {Array.<obog>} obogs - 「卒業したメンバー」
    * @property {Array.<faculty>} faculties - 研究活動の執行主体一覧
    * @property {Array.<menuItem>} menuItems - メニュー項目
+   * @property {Array.<affiliate>} affiliates - 発達心理学研究室の出身・所属メンバーの論文
+   * @property {Array.<bachelor>} bachelors - 学部生の論文
+   * @property {Array.<master>} masters - 修士生の論文
+   * @property {Array.<doctor>} doctors - 博士生の論文
    */
+
   let config = {};
 
   const response = await fetchTimeout(configName, defaultTimeout, {
