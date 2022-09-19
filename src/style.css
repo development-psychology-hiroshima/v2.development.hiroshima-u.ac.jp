@@ -307,7 +307,10 @@ html {
 mark {
   background: none;
   color: var(--color-text);
-  text-decoration: underline 2px wavy;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2rem;
 }
 
 #content .content-text {

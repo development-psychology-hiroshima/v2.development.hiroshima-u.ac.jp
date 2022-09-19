@@ -104,27 +104,27 @@ const getConfig = async (configName, fallbackConfigName) => {
    */
 
   /**
-   * @typedef {Object} paper
+   * @typedef {Object} paper - 論文
    * @property {String} title - 論文のタイトル
-   * @property {String} url
+   * @property {String} url - 論文へのリンク
    */
 
   /**
-   * @typedef {Array} affiliate
-   * @property {String} name
-   * @property {Array.<paper>} papers
+   * @typedef {Array} affiliate - 発達心理学研究室の出身・所属メンバーの論文
+   * @property {String} name - 名前
+   * @property {Array.<paper>} papers - 論文リスト
    */
 
   /**
-   * @typedef {Array.<paper>} bachelor
+   * @typedef {Array.<paper>} bachelor - 学部生の論文
    */
 
   /**
-   * @typedef {Array.<paper>} master
+   * @typedef {Array.<paper>} master - 修士の論文
    */
 
   /**
-   * @typedef {Array.<paper>} doctor
+   * @typedef {Array.<paper>} doctor - 博士の論文
    */
 
   /**
