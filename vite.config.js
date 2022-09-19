@@ -1,14 +1,17 @@
 /* eslint-disable no-unused-vars */
+import path from "path";
 import { visualizer } from "rollup-plugin-visualizer";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
-import viteCompression from "vite-plugin-compression";
+// import viteCompression from "vite-plugin-compression";
 import vitePluginImp from "vite-plugin-imp";
 import { VitePWA } from "vite-plugin-pwa";
 import topLevelAwait from "vite-plugin-top-level-await";
 import legacy from "@vitejs/plugin-legacy";
 import vue from "@vitejs/plugin-vue";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 // https://vitejs.dev/config/
 // noinspection JSUnusedGlobalSymbols
 export default defineConfig({
@@ -67,17 +70,18 @@ export default defineConfig({
       workbox: {
         runtimeCaching: [
           {
-            urlPattern: /(.*?)\.(png|jpe?g|svg|gif|webp)/,
+            urlPattern: /(.*?)\.(png|jpe?g|svg|gif|webp)$/i,
             handler: "StaleWhileRevalidate",
             options: {
               cacheName: "image-cache",
             },
           },
           {
-            urlPattern: /(.*?)\.(js|css|ya?ml)/,
+            urlPattern: /(.*?)\.(js|css|ya?ml)$/i,
             handler: "NetworkFirst",
             options: {
               cacheName: "js-css-cache",
+              networkTimeoutSeconds: 5,
             },
           },
         ],
@@ -100,16 +104,12 @@ export default defineConfig({
     },
     rollupOptions: {
       input: {
-        index: fileURLToPath(new URL("./index.html", import.meta.url)),
-        umemura: fileURLToPath(new URL("./umemura.html", import.meta.url)),
-        sugimura: fileURLToPath(new URL("./sugimura.html", import.meta.url)),
-        members: fileURLToPath(new URL("./members.html", import.meta.url)),
-        research_students: fileURLToPath(
-          new URL("./research_students.html", import.meta.url)
-        ),
-        // annual_schedule: fileURLToPath(
-        //   new URL("./annual_schedule.html", import.meta.url)
-        // ),
+        index: path.resolve(__dirname, "index.html"),
+        umemura: path.resolve(__dirname, "umemura.html"),
+        sugimura: path.resolve(__dirname, "sugimura.html"),
+        members: path.resolve(__dirname, "members.html"),
+        research_students: path.resolve(__dirname, "research_students.html"),
+        annual_schedule: path.resolve(__dirname, "annual_schedule.html"),
       },
 
       // output: {

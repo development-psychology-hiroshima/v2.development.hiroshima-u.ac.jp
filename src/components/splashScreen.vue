@@ -1,6 +1,5 @@
 <script setup>
-import { ref } from "vue";
-import { inject } from "vue";
+import { inject, ref } from "vue";
 
 /**
  * @namespace menuItems
