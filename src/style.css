@@ -449,10 +449,9 @@ figcaption {
 }
 
 footer {
-  background-color: var(--color-background-lighter);
+  background-color: transparent;
   padding: 1.5rem;
   width: 100vw;
-  /*box-shadow: 0 -0.1rem 0.25rem 0 #0000000f;*/
   color: var(--color-gray);
   text-align: center;
 }
