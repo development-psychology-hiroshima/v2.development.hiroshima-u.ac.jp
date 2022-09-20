@@ -132,6 +132,7 @@ switch (currentPage) {
           .provide("showType", "career")
           .provide("career", config.graduates)
           .mount("#container-career-development");
+        removeLoadingScreen(0);
       })
       .catch((e) => {
         console.error(e);
@@ -149,6 +150,7 @@ switch (currentPage) {
             mounted: async (el, binding) => await lazyLoad(el, binding),
           })
           .mount("#app-mount-point");
+        removeLoadingScreen(0);
       })
       .catch((e) => {
         console.error(e);
@@ -167,6 +169,7 @@ switch (currentPage) {
             mounted: async (el, binding) => await lazyLoad(el, binding),
           })
           .mount("#app-mount-point");
+        removeLoadingScreen(0);
       })
       .catch((e) => {
         console.error(e);
@@ -174,8 +177,6 @@ switch (currentPage) {
     break;
   }
 }
-
-removeLoadingScreen(0);
 
 if ("index" !== currentPage) {
   if (document.getElementById("menu-bar")) {
