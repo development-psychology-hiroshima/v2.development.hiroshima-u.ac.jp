@@ -158,10 +158,7 @@ switch (currentPage) {
     break;
   }
   case "research_students": {
-    getConfig(
-      "configs/research.yml",
-      "configs/fallback/research.json"
-    )
+    getConfig("configs/research.yml", "configs/fallback/research.json")
       .then((config) => {
         createApp(StudentResearchWrapper)
           .provide("researches", config)
