@@ -77,10 +77,10 @@ export default defineConfig({
             },
           },
           {
-            urlPattern: /(.*?)\.(js|css|ya?ml)$/i,
+            urlPattern: /(.*?)\.(js|css|ya?ml|json)$/i,
             handler: "NetworkFirst",
             options: {
-              cacheName: "js-css-cache",
+              cacheName: "static-cache",
               networkTimeoutSeconds: 5,
             },
           },

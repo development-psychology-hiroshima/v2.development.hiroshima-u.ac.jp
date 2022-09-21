@@ -31,7 +31,7 @@ const paths = [
       "..",
       "public",
       "configs",
-      "membersResearch.yml"
+      "research.yml"
     ),
     jsonPath: path.join(
       __dirname,
@@ -39,7 +39,7 @@ const paths = [
       "public",
       "configs",
       "fallback",
-      "membersResearch.json"
+      "research.json"
     ),
   },
 ];
