@@ -166,6 +166,7 @@ const getConfig = async (configName, fallbackConfigName) => {
       if (!fallbackConfigName) {
         return undefined;
       }
+      console.log("Loading fallback config...");
       config = await fetchTimeout(fallbackConfigName, defaultTimeout, {
         signal: controller.signal,
       })
