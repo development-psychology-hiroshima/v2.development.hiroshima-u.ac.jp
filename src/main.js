@@ -76,12 +76,13 @@ function cyrb53(str, seed = 0) {
   return longHash.toString(16);
 }
 
-function removeLoadingScreen(timoutMilliseconds = 0) {
+function removeLoadingScreen() {
   const loadingElement = document.getElementById("loading");
   if (loadingElement) {
+    loadingElement.classList.add("fade");
     setTimeout(() => {
       loadingElement.remove();
-    }, timoutMilliseconds);
+    }, 375);
   }
 }
 
@@ -132,7 +133,7 @@ switch (currentPage) {
           .provide("showType", "career")
           .provide("career", config.graduates)
           .mount("#container-career-development");
-        removeLoadingScreen(0);
+        removeLoadingScreen();
       })
       .catch((e) => {
         console.error(e);
@@ -150,7 +151,7 @@ switch (currentPage) {
             mounted: async (el, binding) => await lazyLoad(el, binding),
           })
           .mount("#app-mount-point");
-        removeLoadingScreen(0);
+        removeLoadingScreen();
       })
       .catch((e) => {
         console.error(e);
@@ -166,7 +167,7 @@ switch (currentPage) {
             mounted: async (el, binding) => await lazyLoad(el, binding),
           })
           .mount("#app-mount-point");
-        removeLoadingScreen(0);
+        removeLoadingScreen();
       })
       .catch((e) => {
         console.error(e);

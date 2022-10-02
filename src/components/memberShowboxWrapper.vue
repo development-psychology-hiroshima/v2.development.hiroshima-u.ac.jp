@@ -1,9 +1,22 @@
 <script setup>
-import { inject } from "vue";
+import { inject, onMounted } from "vue";
 import MemberShowbox from "./memberShowbox.vue";
 
 const members = inject("members");
 const obogs = inject("obogs");
+
+onMounted(() => {
+  const url = new URL(window.location.href);
+  const hash = url.hash;
+
+  if (hash) {
+    const target = document.querySelector(hash);
+    if (target) {
+      target.classList.add("target");
+      target.scrollIntoView();
+    }
+  }
+});
 </script>
 
 <template>

@@ -97,6 +97,19 @@ body {
   color: var(--color-text, #000);
 }
 
+#loading.fade {
+  animation: fade 0.375s linear;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 #loading-text {
   margin-top: 1rem;
   letter-spacing: 0.25rem;
@@ -300,7 +313,8 @@ html {
   margin-bottom: 0.25rem;
 }
 
-:is(h1, h2, h3):target {
+:is(h1, h2, h3):target,
+.target {
   margin-top: -3rem;
   padding-top: 3rem;
 }

@@ -70,7 +70,7 @@ export default defineConfig({
       workbox: {
         runtimeCaching: [
           {
-            urlPattern: /(.*?)\.(png|jpe?g|svg|gif|webp)$/i,
+            urlPattern: /(.*?)\.(png|jpe?g|svg|gif|webp|ico)$/i,
             handler: "StaleWhileRevalidate",
             options: {
               cacheName: "image-cache",

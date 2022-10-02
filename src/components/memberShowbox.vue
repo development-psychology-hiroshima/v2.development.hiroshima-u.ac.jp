@@ -95,6 +95,7 @@ h3 {
 h3::before {
   display: inline-block;
   margin-right: 0.5rem;
+  margin-bottom: 0.1rem;
   background-color: var(--color-coquelicot);
   width: 1rem;
   height: 1rem;
