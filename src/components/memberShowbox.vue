@@ -1,7 +1,7 @@
 <script setup>
-import { inject } from "vue";
+import { inject, onMounted } from "vue";
 
-defineProps({
+const props = defineProps({
   member: {
     type: Object,
     default() {
@@ -26,15 +26,29 @@ function normalizeName(name, replacementString = " ") {
 function getMemberNameHashId(name) {
   return "member-" + cyrb53(normalizeName(name, ""));
 }
+
+const memberNameHash = getMemberNameHashId(props.member.name);
+
+onMounted(() => {
+  const element = document.getElementById(memberNameHash);
+  if (element) {
+    const width = element.offsetWidth;
+    if (width > 325) {
+      element.classList.add("long");
+    }
+  }
+});
 </script>
 
 <template>
   <div class="member-showbox">
-    <div class="title-wrapper" :id="getMemberNameHashId(member.name)">
-      <h3>
-        {{ normalizeName(member.name) }}
-      </h3>
-      <p class="position">{{ member.position }}</p>
+    <div class="title-container">
+      <div class="title-wrapper" :id="memberNameHash">
+        <h3>
+          {{ normalizeName(member.name) }}
+        </h3>
+        <p class="position">{{ member.position }}</p>
+      </div>
     </div>
     <img
       src="/images/students.svg"
@@ -80,11 +94,15 @@ img {
   object-fit: cover;
 }
 
+.title-container {
+  grid-area: title;
+}
+
 .title-wrapper {
   display: flex;
-  grid-area: title;
   flex-direction: row;
   align-items: baseline;
+  width: fit-content;
 }
 
 h3 {
@@ -131,6 +149,15 @@ span.title {
 
   .description {
     grid-row-gap: 1rem;
+  }
+
+  .long {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .long .position {
+    margin-left: 0;
   }
 }
 </style>
