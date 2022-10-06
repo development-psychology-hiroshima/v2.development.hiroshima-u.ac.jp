@@ -133,7 +133,7 @@ const contents =
   margin-left: 0;
 }
 
-#timeline > div:last-child{
+#timeline > div:last-child {
   margin-right: 5vw;
 }
 
