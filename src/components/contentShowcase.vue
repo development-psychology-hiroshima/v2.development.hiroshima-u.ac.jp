@@ -145,6 +145,7 @@ switch (params.type) {
 .container-avatar-preview {
   transition: all 0.375s ease-in-out;
   margin-bottom: 2rem;
+  width: fit-content;
 }
 
 :is(.container-showcase-preview, .container-avatar-preview):hover {

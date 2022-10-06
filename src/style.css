@@ -228,6 +228,16 @@ img#banner {
   overflow-x: scroll;
 }
 
+@supports (display: grid) {
+  #container-introduction {
+    grid-column-gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    padding: 2rem 2rem 0 2rem;
+  }
+}
+
 #container-career-development {
   justify-content: flex-start;
   align-items: center;
