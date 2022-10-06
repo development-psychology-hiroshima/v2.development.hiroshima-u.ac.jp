@@ -195,6 +195,7 @@ switch (params.type) {
   height: auto;
   max-height: 15rem;
   object-fit: cover;
+  object-position: center;
 }
 
 .preview-contents {
