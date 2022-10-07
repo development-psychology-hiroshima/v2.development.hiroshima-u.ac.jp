@@ -1,9 +1,7 @@
-/* eslint-disable no-unused-vars */
 import path from "path";
 import { visualizer } from "rollup-plugin-visualizer";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
-// import viteCompression from "vite-plugin-compression";
 import vitePluginImp from "vite-plugin-imp";
 import { VitePWA } from "vite-plugin-pwa";
 import topLevelAwait from "vite-plugin-top-level-await";
@@ -90,7 +88,6 @@ export default defineConfig({
       // selfDestroying: true,
     }),
     vitePluginImp(),
-    // viteCompression({ algorithm: "brotliCompress" }),
     visualizer(),
   ],
   build: {
