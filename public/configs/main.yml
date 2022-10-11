@@ -14,6 +14,7 @@ projects:
 # lazyloadでは，より小さな画像を読み込むことで，
 # ユーザのインタネットが遅いでも，画像を読み込めるようになる
 # lazyload機能を欲しくない場合，この設定を null にしてください。
+# normal - 通常の画像のURL
 backgrounds:
   lazyload: /backgrounds/background.lazyload.webp
   normal: /backgrounds/background.webp
