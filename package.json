@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "js-yaml": "^4.1.0",
-    "vue": "^3.2.41"
+    "vue": "^3.2.45"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
