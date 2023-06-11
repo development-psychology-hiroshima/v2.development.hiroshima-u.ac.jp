@@ -156,10 +156,10 @@ const contents =
 
 .container-year,
 .container-card {
+  content-visibility: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  content-visibility: auto;
   margin-left: 1rem;
 }
 
