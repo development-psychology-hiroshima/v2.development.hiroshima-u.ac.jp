@@ -209,7 +209,11 @@ switch (params.type) {
 }
 
 .preview-title {
-  font-family: "Noto Serif JP", -apple-system, BlinkMacSystemFont, system-ui,
+  font-family:
+    "Noto Serif JP",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
     serif;
 }
 
@@ -288,7 +292,11 @@ switch (params.type) {
   color: var(--color-text);
   font-weight: 700;
   font-size: 1.5rem;
-  font-family: "Noto Serif JP", -apple-system, BlinkMacSystemFont, system-ui,
+  font-family:
+    "Noto Serif JP",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
     serif;
 }
 

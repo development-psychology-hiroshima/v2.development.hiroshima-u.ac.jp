@@ -144,7 +144,11 @@ const root = h(
   min-width: 20rem;
   color: var(--color-text);
   font-weight: 700;
-  font-family: "Noto Serif JP", -apple-system, BlinkMacSystemFont, system-ui,
+  font-family:
+    "Noto Serif JP",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
     serif;
   text-decoration: none;
 }
@@ -174,7 +178,11 @@ const root = h(
   color: var(--color-gray);
   font-weight: 400;
   font-size: 1rem;
-  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, system-ui,
+  font-family:
+    "Noto Sans JP",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
     sans-serif;
 }
 
