@@ -106,7 +106,11 @@ onBeforeUnmount(() => {
 
 h2 {
   margin-bottom: 1.5rem;
-  font-family: "Noto Serif JP", -apple-system, BlinkMacSystemFont, system-ui,
+  font-family:
+    "Noto Serif JP",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
     serif;
 }
 
