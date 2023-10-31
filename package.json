@@ -20,7 +20,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "7.21.8",
     "@esbuild-plugins/node-globals-polyfill": "0.2.3",
-    "@trivago/prettier-plugin-sort-imports": "4.1.1",
+    "@trivago/prettier-plugin-sort-imports": "4.2.1",
     "@vitejs/plugin-legacy": "4.0.4",
     "@vitejs/plugin-vue": "4.2.3",
     "eslint": "8.42.0",
