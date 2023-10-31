@@ -24,7 +24,7 @@
     "@vitejs/plugin-legacy": "4.0.4",
     "@vitejs/plugin-vue": "4.2.3",
     "eslint": "8.42.0",
-    "eslint-config-prettier": "8.8.0",
+    "eslint-config-prettier": "9.0.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-sort-exports": "0.8.0",
     "eslint-plugin-vue": "9.14.1",
