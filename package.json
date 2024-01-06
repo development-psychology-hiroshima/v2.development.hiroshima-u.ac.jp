@@ -15,14 +15,14 @@
   ],
   "dependencies": {
     "js-yaml": "4.1.0",
-    "vue": "3.3.13"
+    "vue": "3.4.4"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.23.3",
     "@esbuild-plugins/node-globals-polyfill": "0.2.3",
     "@trivago/prettier-plugin-sort-imports": "4.3.0",
     "@vitejs/plugin-legacy": "4.1.1",
-    "@vitejs/plugin-vue": "4.6.0",
+    "@vitejs/plugin-vue": "4.6.2",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",
