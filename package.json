@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "js-yaml": "4.1.0",
-    "vue": "3.4.21"
+    "vue": "3.4.23"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.24.1",
@@ -27,13 +27,13 @@
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-sort-exports": "0.9.1",
-    "eslint-plugin-vue": "9.24.1",
+    "eslint-plugin-vue": "9.25.0",
     "postcss": "8.4.38",
     "prettier": "3.2.5",
     "prettier-plugin-css-order": "2.1.2",
     "rollup-plugin-visualizer": "5.12.0",
     "terser": "5.30.3",
-    "vite": "5.2.8",
+    "vite": "5.2.9",
     "vite-plugin-pwa": "0.19.8"
   }
 }
